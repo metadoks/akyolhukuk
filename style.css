@@ -91,7 +91,15 @@ body {
 .nav-menu a:hover::after {
     transform: scaleX(1);
 }
+/* ================================== */
+/* Hamburger Menü Düzeltmesi          */
+/* ================================== */
 
+/* Hamburger Menü İkonunu ve Checkbox'ı Masaüstünde Gizle */
+.menu-toggle,
+.hamburger-menu {
+    display: none;
+}
 /* Ana Karşılama (Hero) Alanı */
 .hero {
     background-color: var(--primary-green);
