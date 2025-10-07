@@ -213,8 +213,92 @@ body {
 .hizmet-karti h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-cream); }
 
 /* İletişim Bölümü */
-#iletisim { text-align: center; }
-.contact-info { margin-top: 2rem; font-size: 1.1rem; line-height: 2; }
+/* ================================== */
+/* İletişim Bölümü Yeniden Tasarımı   */
+/* ================================== */
+
+#iletisim {
+    text-align: center;
+    background-color: var(--light-background); /* Arka plan rengini belirginleştirdik */
+}
+
+.contact-description {
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto; /* Açıklama altına boşluk */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mobil uyumlu ızgara */
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.contact-item {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Hafif gölge */
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-cream);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafif kalkma */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-item i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    display: block; /* İkonun kendi başına durmasını sağlar */
+}
+
+.contact-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.contact-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-item p a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+    color: #0d2722; /* Daha koyu bir yeşil */
+    text-decoration: underline;
+}
+
+/* İletişim Bölümü için CTA Buton Stili */
+.contact-cta-button {
+    margin-top: 4rem; /* Yukarıdan biraz boşluk bırak */
+    display: inline-block; /* Genişliğini içeriğe göre ayarla */
+    background-color: var(--primary-green); /* Arka plan yeşil olsun */
+    color: var(--light-background); /* Yazı rengi krem olsun */
+    border: 2px solid var(--primary-green); /* Çerçeve rengi */
+}
+
+.contact-cta-button:hover {
+    background-color: #0d2722; /* Daha koyu yeşil */
+    color: var(--light-background);
+    border-color: #0d2722;
+}
+
+/* Mobil uyum: Grid'in tek sütuna düşmesi zaten minmax ile ayarlandı */
 
 /* Altbilgi (Footer) */
 .footer { background: var(--primary-green); color: var(--accent-cream); text-align: center; padding: 30px 0; }
