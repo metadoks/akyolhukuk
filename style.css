@@ -1,0 +1,249 @@
+/* Kök Değişkenler ve Genel Stiller */
+:root {
+    --primary-green: #1d3a35;
+    --light-background: #fdfbf7;
+    --accent-cream: #e8e2d8;
+    --dark-text: #212121;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text);
+    background-color: var(--light-background);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Başlık ve Navigasyon */
+.header {
+    background: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent-cream);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* YENİ DEĞİŞİKLİK: Sağ boşluk 15px kalsın ama sol boşluk 0 olsun */
+    padding: 0 15px 0 0; 
+}
+
+.logo {
+    height: 130px; 
+    width: auto;
+    margin-top: -17px;
+    margin-bottom: -64px;
+    
+    /* YENİ EKLENEN SATIR: Logoyu sola doğru çeker */
+    margin-left: -130px;
+    
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+.nav-menu a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-green);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Ana Karşılama (Hero) Alanı */
+.hero {
+    background-color: var(--primary-green);
+    color: var(--light-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 60vh;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: transparent;
+    color: var(--accent-cream);
+    padding: 12px 35px;
+    text-decoration: none;
+    border: 2px solid var(--accent-cream);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: var(--accent-cream);
+    color: var(--primary-green);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Genel İçerik Bölümleri */
+.content-section { padding: 80px 0; }
+.content-section-dark { padding: 80px 0; background-color: var(--primary-green); color: var(--light-background); }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+.content-section-dark .section-title { color: var(--light-background); }
+
+/* Hakkımda Bölümü */
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    /* YENİ EKLENEN SATIR: Fotoğrafı dikeyde yukarı kaydırır */
+    object-position: center 20%; 
+    border-radius: 50%;
+    border: 4px solid var(--primary-green);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-green);
+}
+
+/* Hizmetler Bölümü */
+.hizmetler-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.hizmet-karti {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(232, 226, 216, 0.2);
+    padding: 30px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFadeIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hizmet-karti:nth-child(1) { animation-delay: 0.1s; }
+.hizmet-karti:nth-child(2) { animation-delay: 0.2s; }
+.hizmet-karti:nth-child(3) { animation-delay: 0.3s; }
+.hizmet-karti:nth-child(4) { animation-delay: 0.4s; }
+
+.hizmet-karti:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hizmet-karti h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-cream); }
+
+/* İletişim Bölümü */
+#iletisim { text-align: center; }
+.contact-info { margin-top: 2rem; font-size: 1.1rem; line-height: 2; }
+
+/* Altbilgi (Footer) */
+.footer { background: var(--primary-green); color: var(--accent-cream); text-align: center; padding: 30px 0; }
+.footer .disclaimer { font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Animasyonların Tanımlanması (Keyframes) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobil Uyum (Responsive) */
+@media(min-width: 769px) {
+    .about-container {
+        flex-direction: row;
+        text-align: left;
+    }
+    .about-text h2 {
+        text-align: left;
+    }
+}
+
+@media(max-width: 768px) {
+    .header .container { flex-direction: column; gap: 15px; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .hizmetler-grid { grid-template-columns: 1fr; }
+    .about-text h2 { text-align: center; }
+}
+/* Navigasyon Linklerinin Doğru Yerde Durması İçin Kaydırma Ayarı */
+#hero, #hakkimizda, #hizmetler, #iletisim {
+    /* Bu değer, sabit menünün yüksekliği kadar olmalıdır. */
+    /* Gerekirse 100px'i 90px veya 110px olarak değiştirebilirsin. */
+    scroll-margin-top: 50px; 
+}
