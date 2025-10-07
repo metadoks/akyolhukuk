@@ -315,6 +315,29 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ================================== */
+/* Yeni Sayfa İçerik Stilleri         */
+/* ================================== */
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px; /* Sayfa içeriğine boşluk ver */
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-green);
+}
+
+.page-content {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
 /* Mobil Uyum (Responsive) */
 @media(min-width: 769px) {
     .about-container {
