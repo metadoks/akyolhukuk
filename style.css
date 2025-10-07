@@ -234,13 +234,52 @@ body {
     }
 }
 
+/* ================================== */
+/* Mobil Uyum (Responsive) Ayarları   */
+/* ================================== */
+
 @media(max-width: 768px) {
-    .header .container { flex-direction: column; gap: 15px; }
+
+    /* --- Genel Mobil Ayarları --- */
     .hero-title { font-size: 2.5rem; }
     .hero-subtitle { font-size: 1.1rem; }
     .hizmetler-grid { grid-template-columns: 1fr; }
     .about-text h2 { text-align: center; }
+
+
+    /* === MOBİL HEADER İÇİN ÖZEL ÇÖZÜMLER === */
+
+    /* 1. Header Konteynerini Düzenliyoruz */
+    .header .container {
+        flex-direction: column; /* Öğeleri alt alta diz (doğru) */
+        align-items: center; /* Her şeyi yatayda ortala */
+        gap: 25px; /* Logo ile menü arasına daha fazla boşluk koy */
+        padding: 20px 15px; /* Üst ve alt iç boşluğu artırarak ferahlat */
+    }
+
+    /* 2. Logonun Sorun Yaratan Kodlarını Sıfırlıyoruz */
+    .logo {
+        /* Masaüstündeki tüm negatif margin'leri mobil için iptal et */
+        margin: 0; 
+        /* Mobil ekran için logoyu daha makul bir boyuta getir */
+        height: 85px; 
+    }
+
+    /* 3. Menü Linklerini Simetrik Hale Getiriyoruz */
+    .nav-menu {
+        display: flex;
+        flex-direction: column; /* Linkleri alt alta diz */
+        align-items: center;   /* Hepsini ortala */
+        gap: 20px;             /* Linklerin arasına boşluk koy */
+    }
+    
+    /* Gerekirse linklerin altındaki animasyonlu çizgiyi mobil için kaldırabiliriz */
+    .nav-menu a::after {
+        display: none;
+    }
 }
+
+
 /* Navigasyon Linklerinin Doğru Yerde Durması İçin Kaydırma Ayarı */
 #hero, #hakkimizda, #hizmetler, #iletisim {
     /* Bu değer, sabit menünün yüksekliği kadar olmalıdır. */
