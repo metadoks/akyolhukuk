@@ -50,7 +50,7 @@
                 </div>
                 <div class="about-text">
                     <h2>Avukat A. Güray Akyol</h2>
-                    <p>yapım aşamasındasında</p>
+                    <p>yapım aşamasında</p>
                 </div>
             </div>
         </section>
@@ -98,6 +98,22 @@
             <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
         </div>
     </footer>
+</footer>
+    <script>
+        // Gerekli HTML elementlerini seçiyoruz:
+        // menüyü açıp kapatan görünmez checkbox
+        const menuToggle = document.querySelector('#menu-toggle'); 
+        // menünün içindeki tüm linkler
+        const navLinks = document.querySelectorAll('.nav-menu a'); 
 
+        // Menüdeki her bir linke bir tıklama olayı ekliyoruz
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Bir linke tıklandığında, checkbox'ın işaretini kaldırarak
+                // menünün yumuşak bir şekilde otomatik olarak kapanmasını sağlıyoruz.
+                menuToggle.checked = false;
+            });
+        });
+    </script>
 </body>
 </html>
