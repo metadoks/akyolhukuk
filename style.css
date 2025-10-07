@@ -16,13 +16,32 @@ html {
     scroll-behavior: smooth;
 }
 
+/* style.css dosyanın üst kısımları */
+
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.7;
     color: var(--dark-text);
     background-color: var(--light-background);
     animation: fadeIn 1s ease-in-out;
+    
+    /* YENİ EKLENECEK SATIRLAR AŞAĞIDA */
+    /* Bu kodlar, metin seçmeyi ve imlecin çıkmasını engeller */
+    -webkit-user-select: none; /* Safari ve Chrome için */
+    -moz-user-select: none;    /* Firefox için */
+    -ms-user-select: none;     /* Internet Explorer/Edge için */
+    user-select: none;         /* Standart sözdizimi */
 }
+
+/* YENİ KOD BLOĞUNU BURAYA EKLE */
+/* Kopyalanması gerekebilecek metinler için seçimi tekrar aktif etme */
+p, .contact-item, .page-content {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
 
 .container {
     max-width: 1100px;
