@@ -238,6 +238,10 @@ body {
 /* Mobil Uyum (Responsive) Ayarları   */
 /* ================================== */
 
+/* ================================== */
+/* Mobil Uyum (Responsive) Ayarları   */
+/* ================================== */
+
 @media(max-width: 768px) {
 
     /* --- Genel Mobil Ayarları --- */
@@ -247,35 +251,88 @@ body {
     .about-text h2 { text-align: center; }
 
 
-    /* === MOBİL HEADER İÇİN ÖZEL ÇÖZÜMLER === */
+    /* === HAMBURGER MENÜ SİSTEMİ === */
 
-    /* 1. Header Konteynerini Düzenliyoruz */
+    /* 1. Header Konteynerini Tekrar Yan Yana Yapıyoruz */
     .header .container {
-        flex-direction: column; /* Öğeleri alt alta diz (doğru) */
-        align-items: center; /* Her şeyi yatayda ortala */
-        gap: 25px; /* Logo ile menü arasına daha fazla boşluk koy */
-        padding: 20px 15px; /* Üst ve alt iç boşluğu artırarak ferahlat */
-    }
-
-    /* 2. Logonun Sorun Yaratan Kodlarını Sıfırlıyoruz */
-    .logo {
-        /* Masaüstündeki tüm negatif margin'leri mobil için iptal et */
-        margin: 0; 
-        /* Mobil ekran için logoyu daha makul bir boyuta getir */
-        height: 85px; 
-    }
-
-    /* 3. Menü Linklerini Simetrik Hale Getiriyoruz */
-    .nav-menu {
-        display: flex;
-        flex-direction: column; /* Linkleri alt alta diz */
-        align-items: center;   /* Hepsini ortala */
-        gap: 20px;             /* Linklerin arasına boşluk koy */
+        flex-direction: row; /* Logo ve ikonu yan yana getir */
+        justify-content: space-between; /* Birini sola, diğerini sağa yasla */
+        align-items: center;
+        padding: 10px 15px; /* Header yüksekliğini küçült */
     }
     
-    /* Gerekirse linklerin altındaki animasyonlu çizgiyi mobil için kaldırabiliriz */
-    .nav-menu a::after {
-        display: none;
+    .logo {
+        height: 65px; /* Mobil için logoyu biraz daha küçült */
+        margin: 0; /* Tüm eski margin'leri sıfırla */
+        z-index: 101; /* Açık menünün üstünde kalması için */
+    }
+
+    /* 2. Menü Linklerini Varsayılan Olarak Gizliyoruz */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        background-color: var(--primary-green);
+        
+        /* Menüyü ekranın dışına taşıyoruz */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Tüm ekranı kaplasın */
+        transform: translateX(100%); /* Sağa doğru tamamen gizle */
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+    }
+    
+    .nav-menu a {
+        color: var(--light-background);
+        font-size: 1.5rem;
+    }
+
+    /* 3. Hamburger İkonunu (3 Çizgi) Stillendiriyoruz */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .hamburger-menu span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-green);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 4. Sihirli Kısım: Menüyü Açma ve İkonu 'X' Yapma */
+    .menu-toggle {
+        display: none; /* Checkbox'ı gizle */
+    }
+
+    /* Checkbox işaretlendiğinde (ikona tıklandığında)... */
+    .menu-toggle:checked ~ .nav-menu {
+        transform: translateX(0); /* Menüyü ekranın içine kaydır */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: var(--light-background); /* Çizgi rengini değiştir */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(2) {
+        opacity: 0; /* Ortadaki çizgiyi yok et */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background-color: var(--light-background); /* Çizgi rengini değiştir */
     }
 }
 
