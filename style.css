@@ -14,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* style.css dosyanın üst kısımları */
