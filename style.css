@@ -25,14 +25,19 @@ body {
     background-color: var(--light-background);
     animation: fadeIn 1s ease-in-out;
     
-    /* YENİ EKLENECEK SATIRLAR AŞAĞIDA */
-    /* Bu kodlar, metin seçmeyi ve imlecin çıkmasını engeller */
-    -webkit-user-select: none; /* Safari ve Chrome için */
-    -moz-user-select: none;    /* Firefox için */
-    -ms-user-select: none;     /* Internet Explorer/Edge için */
-    user-select: none;         /* Standart sözdizimi */
+    /* YENİ EKLENEN SATIRLAR */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfanın en az ekran boyu kadar uzun olmasını sağlar */
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
+main {
+    flex-grow: 1; /* main etiketinin mevcut boşluğu dolduracak şekilde büyümesini sağlar */
+}
 /* YENİ KOD BLOĞUNU BURAYA EKLE */
 /* Kopyalanması gerekebilecek metinler için seçimi tekrar aktif etme */
 p, .contact-item, .page-content {
@@ -360,44 +365,62 @@ p, .contact-item, .page-content {
 /* ================================== */
 /* Yukarı Çık Butonu Stilleri          */
 /* ================================== */
+/* ================================== */
+/* Yukarı Çık Butonu (Geliştirilmiş)    */
+/* ================================== */
+
+/* Butonun "nefes alma" animasyonu */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+}
+
 .scroll-top-btn {
-    position: fixed; /* Ekranda sabit durmasını sağlar */
+    position: fixed;
     bottom: 30px;
-    right: 30px;
-    z-index: 999; /* Diğer her şeyin üstünde olmasını sağlar */
+    right: 30px; /* Konumu sağ alt köşe olarak düzeltiyoruz */
+    z-index: 999;
     
-    width: 50px;
-    height: 50px;
+    width: 55px;  /* Boyutunu biraz büyüttük */
+    height: 55px;
     background-color: var(--primary-green);
     color: var(--light-background);
     
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* İkonu büyüttük */
     
-    border-radius: 50%; /* Daire şekli verir */
+    border-radius: 50%;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     
-    /* Başlangıçta gizli olması için */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px); /* Aşağıda gizlensin, yukarı kayarak çıksın */
-    
-    transition: all 0.3s ease-in-out;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
 }
 
 .scroll-top-btn.show {
-    /* Görünür hale geldiğindeki hali */
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    animation: pulse 2s infinite; /* Animasyonu ekliyoruz */
 }
 
 .scroll-top-btn:hover {
-    background-color: #0d2722; /* Daha koyu yeşil */
-    transform: scale(1.1); /* Hafifçe büyüsün */
+    background-color: #0d2722;
+    animation-play-state: paused; /* Hover olunca animasyon dursun */
+    transform: scale(1.1);
 }
 
 /* Mobil Uyum (Responsive) */
