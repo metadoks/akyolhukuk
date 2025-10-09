@@ -567,8 +567,34 @@ p, .contact-item, .page-content {
 @media(max-width: 768px) {
 
     /* --- Genel Mobil Ayarları --- */
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.1rem; }
+    .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+
+    /* YENİ DEĞİŞİKLİKLER */
+    color: var(--accent-cream); /* Rengi daha sıcak krem tonuyla güncelledik */
+    /* Daha zengin ve katmanlı bir gölge efekti ekledik */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+    .hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    position: relative;
+    padding-top: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* YENİ DEĞİŞİKLİKLER */
+    color: var(--accent-cream); /* Rengi daha sıcak krem tonuyla güncelledik */
+    /* Ana başlıkla uyumlu olması için buraya da daha belirgin bir gölge ekledik */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
     .hizmetler-grid { grid-template-columns: 1fr; }
     .about-text h2 { text-align: center; }
 
