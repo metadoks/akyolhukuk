@@ -201,7 +201,7 @@ p, .contact-item, .page-content {
 .hero-backgrounds .hero-bg:nth-child(3) {
     background-image: url('hero-bg-3.jpg');
     animation-delay: 12s; /* 3. fotoğraf 12. saniyede başlar */
-    background-position: center top; 
+    background-position: center center; 
 }
 .hero-backgrounds .hero-bg:nth-child(4) {
     background-image: url('hero-bg-4.jpg');
@@ -235,26 +235,34 @@ p, .contact-item, .page-content {
 /* Hero Bölümü - Tasarım Düzeltmesi   */
 /* ================================== */
 
+
+/* ================================== */
+/* Hero Bölümü - Final Tasarımı       */
+/* ================================== */
+
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.8rem; /* Yazı boyutunu hafifçe küçülterek daha dengeli hale getirdik */
+    font-size: 5.5rem; /* Marka ismi olduğu için boyutu oldukça büyüttük */
     margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-    text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
-    line-height: 1.1; /* Satırların birbirine daha yakın ve bütünleşik durmasını sağladık */
+    letter-spacing: 2px; /* Harf aralığını artırarak ferahlık ve lüks bir his verdik */
+    line-height: 1.1;
+    color: var(--accent-cream); /* Sıcak krem rengi */
+    /* Gelişmiş gölge efekti */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.3rem; /* Hafifçe küçülttük */
+    font-size: 1.3rem;
     font-weight: 400;
-    margin-bottom: 2.5rem; /* Butonla arasını azalttık */
+    margin-bottom: 2.5rem;
     opacity: 0.95;
     position: relative;
     padding-top: 1.5rem;
-    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-    max-width: 700px; /* Genişliği biraz daha daralttık */
+    max-width: 750px; /* Metin uzunluğuna göre genişliği ayarladık */
     margin-left: auto;
     margin-right: auto;
+    color: var(--accent-cream);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Dekoratif Çizgi */
@@ -264,15 +272,15 @@ p, .contact-item, .page-content {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 70px; /* Çizgiyi biraz kısalttık */
+    width: 80px;
     height: 2px;
     background-color: var(--accent-cream);
     opacity: 0.7;
 }
 
-/* Butonun Doğru Stilini Uygulama */
+/* Hero Butonunun Final Stili */
 .hero .cta-button {
-    background: transparent; /* Tekrar içi boş stile döndük ama daha şık */
+    background: transparent;
     color: var(--accent-cream);
     padding: 12px 35px;
     text-decoration: none;
@@ -281,11 +289,11 @@ p, .contact-item, .page-content {
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease-in-out;
-    box-shadow: none; /* Gölgeyi kaldırdık */
+    box-shadow: none;
 }
 
 .hero .cta-button:hover {
-    background: var(--accent-cream); /* Fare üzerine gelince dolgun hale gelsin */
+    background: var(--accent-cream);
     color: var(--primary-green);
     transform: translateY(-2px);
 }
