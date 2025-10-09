@@ -29,6 +29,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Sayfanın en az ekran boyu kadar uzun olmasını sağlar */
+
+    overflow-x: hidden; /* Yatayda taşmayı engeller */
     
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -389,7 +391,7 @@ p, .contact-item, .page-content {
     position: fixed;
     bottom: 30px;
     right: 30px; /* Konumu sağ alt köşe olarak düzeltiyoruz */
-    z-index: 999;
+    z-index: 102;
     
     width: 55px;  /* Boyutunu biraz büyüttük */
     height: 55px;
