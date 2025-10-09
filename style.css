@@ -586,7 +586,19 @@ p, .contact-item, .page-content {
     animation-play-state: paused; /* Hover olunca animasyon dursun */
     transform: scale(1.1);
 }
-
+/* ================================== */
+/* Logo Giriş Animasyonu              */
+/* ================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Mobil Uyum (Responsive) */
 @media(min-width: 769px) {
     .about-container {
@@ -646,17 +658,19 @@ p, .contact-item, .page-content {
     /* 1. Header Konteynerini Tekrar Yan Yana Yapıyoruz */
     .header .container {
         flex-direction: row;
-        justify-content: center; /* İçindeki ana öğeyi (logoyu) ortalar */
+        justify-content: center;
         align-items: center;
-        padding: 15px 0; /* Üst ve alt boşluğu biraz artırdık */
-        position: relative; /* Hamburger menüyü konumlandırmak için gerekli */
-        min-height: 90px; /* Header'a minimum bir yükseklik verelim */
+        padding: 5px 0; /* Üst ve alt boşluğu minimuma indirdik */
+        position: relative;
     }
     
     .logo {
         margin: 0;
-        height: 75px; /* Logoyu daha görünür hale getirdik */
+        height: 85px; /* Logoyu daha belirgin hale getirdik */
         z-index: 101;
+        
+        /* Yeni efekti ekledik */
+        animation: fadeInDown 0.8s ease-in-out both;
     }
 
     /* 2. Menü Linklerini Varsayılan Olarak Gizliyoruz */
@@ -694,13 +708,11 @@ p, .contact-item, .page-content {
         cursor: pointer;
         z-index: 101;
         
-        /* YENİ EKLENEN KONUMLANDIRMA KODLARI */
-        position: absolute; /* Akıştan çıkarıp serbestçe konumlandır */
-        right: 20px; /* Sağdan 20px boşluk bırak */
-        top: 50%; /* Dikeyde ortalamak için */
-        transform: translateY(-50%); /* Dikeyde tam ortala */
+        position: absolute;
+        right: 25px; /* Konumunu biraz ayarladık */
+        top: 50%;
+        transform: translateY(-50%);
     }
-
     .hamburger-menu span {
         width: 100%;
         height: 3px;
