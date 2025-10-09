@@ -645,16 +645,18 @@ p, .contact-item, .page-content {
 
     /* 1. Header Konteynerini Tekrar Yan Yana Yapıyoruz */
     .header .container {
-        flex-direction: row; /* Logo ve ikonu yan yana getir */
-        justify-content: space-between; /* Birini sola, diğerini sağa yasla */
+        flex-direction: row;
+        justify-content: center; /* İçindeki ana öğeyi (logoyu) ortalar */
         align-items: center;
-        padding: 10px 15px; /* Header yüksekliğini küçült */
+        padding: 15px 0; /* Üst ve alt boşluğu biraz artırdık */
+        position: relative; /* Hamburger menüyü konumlandırmak için gerekli */
+        min-height: 90px; /* Header'a minimum bir yükseklik verelim */
     }
     
     .logo {
-        height: 65px; /* Mobil için logoyu biraz daha küçült */
-        margin: 0; /* Tüm eski margin'leri sıfırla */
-        z-index: 101; /* Açık menünün üstünde kalması için */
+        margin: 0;
+        height: 75px; /* Logoyu daha görünür hale getirdik */
+        z-index: 101;
     }
 
     /* 2. Menü Linklerini Varsayılan Olarak Gizliyoruz */
@@ -691,6 +693,12 @@ p, .contact-item, .page-content {
         height: 25px;
         cursor: pointer;
         z-index: 101;
+        
+        /* YENİ EKLENEN KONUMLANDIRMA KODLARI */
+        position: absolute; /* Akıştan çıkarıp serbestçe konumlandır */
+        right: 20px; /* Sağdan 20px boşluk bırak */
+        top: 50%; /* Dikeyde ortalamak için */
+        transform: translateY(-50%); /* Dikeyde tam ortala */
     }
 
     .hamburger-menu span {
