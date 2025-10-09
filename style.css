@@ -357,6 +357,49 @@ p, .contact-item, .page-content {
     line-height: 1.8;
 }
 
+/* ================================== */
+/* Yukarı Çık Butonu Stilleri          */
+/* ================================== */
+.scroll-top-btn {
+    position: fixed; /* Ekranda sabit durmasını sağlar */
+    bottom: 30px;
+    right: 30px;
+    z-index: 999; /* Diğer her şeyin üstünde olmasını sağlar */
+    
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    color: var(--light-background);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    
+    border-radius: 50%; /* Daire şekli verir */
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    
+    /* Başlangıçta gizli olması için */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Aşağıda gizlensin, yukarı kayarak çıksın */
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.scroll-top-btn.show {
+    /* Görünür hale geldiğindeki hali */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background-color: #0d2722; /* Daha koyu yeşil */
+    transform: scale(1.1); /* Hafifçe büyüsün */
+}
+
 /* Mobil Uyum (Responsive) */
 @media(min-width: 769px) {
     .about-container {
