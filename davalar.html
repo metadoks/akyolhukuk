@@ -85,21 +85,31 @@
         </div>
     </footer>
 </footer>
-    <script>
-        // Gerekli HTML elementlerini seçiyoruz:
-        // menüyü açıp kapatan görünmez checkbox
-        const menuToggle = document.querySelector('#menu-toggle'); 
-        // menünün içindeki tüm linkler
-        const navLinks = document.querySelectorAll('.nav-menu a'); 
-
-        // Menüdeki her bir linke bir tıklama olayı ekliyoruz
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Bir linke tıklandığında, checkbox'ın işaretini kaldırarak
-                // menünün yumuşak bir şekilde otomatik olarak kapanmasını sağlıyoruz.
-                menuToggle.checked = false;
-            });
+<script>
+    /* ---- Mevcut Mobil Menü Kapatma Kodun ---- */
+    const menuToggle = document.querySelector('#menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.checked = false;
         });
-    </script>
+    });
+    /* ---- Mevcut Kodun Sonu ---- */
+
+
+    /* ---- YENİ EKLENECEK YUKARI ÇIK BUTONU KODU ---- */
+    const scrollTopBtn = document.querySelector("#scrollTopBtn");
+
+    // Kullanıcı sayfayı aşağı kaydırdığında bu fonksiyon çalışır
+    window.onscroll = function() {
+        // Eğer 300 pikselden fazla aşağı kaydırılmışsa...
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollTopBtn.classList.add("show"); // Butonu göster
+        } else {
+            scrollTopBtn.classList.remove("show"); // Butonu gizle
+        }
+    };
+    /* ---- Yeni Kodun Sonu ---- */
+</script>
 </body>
 </html>
