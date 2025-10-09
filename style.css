@@ -231,60 +231,63 @@ p, .contact-item, .page-content {
     }
 }
 
+/* ================================== */
+/* Hero Bölümü - Tasarım Düzeltmesi   */
+/* ================================== */
+
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem; /* Yazı boyutunu belirgin şekilde artırdık */
+    font-size: 3.8rem; /* Yazı boyutunu hafifçe küçülterek daha dengeli hale getirdik */
     margin-bottom: 1.5rem;
-    letter-spacing: 1px; /* Harfler arasına çok hafif boşluk */
-    text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5); /* Okunurluk için gölge */
-    line-height: 1.2; /* Satır yüksekliğini ayarladık */
+    letter-spacing: 1px;
+    text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+    line-height: 1.1; /* Satırların birbirine daha yakın ve bütünleşik durmasını sağladık */
 }
 
 .hero-subtitle {
-    font-size: 1.4rem; /* Boyutu biraz artırdık */
+    font-size: 1.3rem; /* Hafifçe küçülttük */
     font-weight: 400;
-    margin-bottom: 3rem; /* Butonla arasına daha fazla boşluk */
-    opacity: 0.95; /* Biraz daha belirgin yaptık */
-    position: relative; /* Çizginin konumlanması için gerekli */
-    padding-top: 1.5rem; /* Çizgi ile arasına boşluk */
+    margin-bottom: 2.5rem; /* Butonla arasını azalttık */
+    opacity: 0.95;
+    position: relative;
+    padding-top: 1.5rem;
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-    max-width: 800px; /* Uzun metnin çok yayılmasını engeller */
+    max-width: 700px; /* Genişliği biraz daha daralttık */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* DEKORATİF ÇİZGİ */
+/* Dekoratif Çizgi */
 .hero-subtitle::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px; /* Çizginin uzunluğu */
-    height: 2px; /* Çizginin kalınlığı */
+    width: 70px; /* Çizgiyi biraz kısalttık */
+    height: 2px;
     background-color: var(--accent-cream);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
-/* Bu kod zaten bir önceki adımda eklenmiş olabilir, aynı olduğundan emin ol */
-.cta-button {
-    background: var(--accent-cream); /* Arka planı dolgun yap */
-    color: var(--primary-green); /* Yazı rengini koyu yeşil yap */
-    padding: 15px 40px; /* İç boşluğu biraz artır */
+/* Butonun Doğru Stilini Uygulama */
+.hero .cta-button {
+    background: transparent; /* Tekrar içi boş stile döndük ama daha şık */
+    color: var(--accent-cream);
+    padding: 12px 35px;
     text-decoration: none;
     border: 2px solid var(--accent-cream);
     border-radius: 5px;
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* Butona gölge ekle */
+    box-shadow: none; /* Gölgeyi kaldırdık */
 }
 
-.cta-button:hover {
-    background: var(--accent-cream);
+.hero .cta-button:hover {
+    background: var(--accent-cream); /* Fare üzerine gelince dolgun hale gelsin */
     color: var(--primary-green);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Genel İçerik Bölümleri */
