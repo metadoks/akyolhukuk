@@ -201,7 +201,7 @@ p, .contact-item, .page-content {
 .hero-backgrounds .hero-bg:nth-child(3) {
     background-image: url('hero-bg-3.jpg');
     animation-delay: 12s; /* 3. fotoğraf 12. saniyede başlar */
-    background-position: center center; 
+    background-position: top bottom; 
 }
 .hero-backgrounds .hero-bg:nth-child(4) {
     background-image: url('hero-bg-4.jpg');
@@ -242,13 +242,15 @@ p, .contact-item, .page-content {
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 5.5rem; /* Marka ismi olduğu için boyutu oldukça büyüttük */
+    font-size: 5.5rem;
     margin-bottom: 1.5rem;
-    letter-spacing: 2px; /* Harf aralığını artırarak ferahlık ve lüks bir his verdik */
     line-height: 1.1;
-    color: var(--accent-cream); /* Sıcak krem rengi */
-    /* Gelişmiş gölge efekti */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 0, 0.5);
+    color: var(--accent-cream);
+
+    /* YENİ VE GÜNCELLENMİŞ STİLLER */
+    letter-spacing: 2.5px; /* Harf aralığını biraz artırdık */
+    /* Daha belirgin ve derin bir gölge efekti */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
@@ -258,11 +260,14 @@ p, .contact-item, .page-content {
     opacity: 0.95;
     position: relative;
     padding-top: 1.5rem;
-    max-width: 750px; /* Metin uzunluğuna göre genişliği ayarladık */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     color: var(--accent-cream);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+    /* YENİ VE GÜNCELLENMİŞ STİL */
+    /* Alt başlık için de daha belirgin bir gölge ekledik */
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Dekoratif Çizgi */
