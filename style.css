@@ -430,18 +430,27 @@ p, .contact-item, .page-content {
 }
 
 /* İletişim Bölümü için CTA Buton Stili */
+/* İletişim Bölümü için CTA Buton Stili */
 .contact-cta-button {
-    margin-top: 4rem; /* Yukarıdan biraz boşluk bırak */
-    display: inline-block; /* Genişliğini içeriğe göre ayarla */
-    background-color: var(--primary-green); /* Arka plan yeşil olsun */
-    color: var(--light-background); /* Yazı rengi krem olsun */
-    border: 2px solid var(--primary-green); /* Çerçeve rengi */
+    margin-top: 4rem;
+    display: inline-block;
+    background-color: var(--primary-green); /* Arka planı tekrar yeşil yap */
+    color: var(--light-background);      /* Yazıyı tekrar krem yap */
+    border: 2px solid var(--primary-green);
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .contact-cta-button:hover {
     background-color: #0d2722; /* Daha koyu yeşil */
     color: var(--light-background);
     border-color: #0d2722;
+    transform: translateY(-2px);
 }
 
 /* Mobil uyum: Grid'in tek sütuna düşmesi zaten minmax ile ayarlandı */
@@ -682,6 +691,27 @@ p, .contact-item, .page-content {
         transform: rotate(-45deg) translate(7px, -6px);
         background-color: var(--light-background); /* Çizgi rengini değiştir */
     }
+    /* === MOBİL İÇİN HERO ARKA PLAN DÜZELTMESİ === */
+
+    /* 1. Animasyonu mobil için tamamen durdur */
+    .hero-bg {
+        animation: none;
+    }
+    
+    /* 2. Sadece ilk fotoğrafın görünmesini sağla, diğerlerini gizle */
+    .hero-backgrounds .hero-bg:nth-child(1) {
+        opacity: 1; /* İlk fotoğrafı görünür yap */
+    }
+    
+    .hero-backgrounds .hero-bg:not(:nth-child(1)) {
+        display: none; /* İlk fotoğraf dışındaki diğer tüm fotoğrafları yok et */
+    }
+
+    /* Gerekirse hero yüksekliğini mobil için ayarlayabiliriz */
+    .hero {
+        height: 80vh; 
+    }
+
 }
 
 
