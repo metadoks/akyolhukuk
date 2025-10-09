@@ -128,15 +128,103 @@ p, .contact-item, .page-content {
     display: none;
 }
 /* Ana Karşılama (Hero) Alanı */
+/* ================================== */
+/* Hero Section - Animasyonlu Arka Plan */
+/* ================================== */
+
 .hero {
-    background-color: var(--primary-green);
+    position: relative; /* İçindeki absolut pozisyonlu elemanlar için gereklidir */
     color: var(--light-background);
+    height: 90vh; /* Yüksekliğini biraz artırarak daha etkileyici yapalım */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 100px 0;
-    min-height: 60vh;
+    padding: 0 20px;
+    overflow: hidden; /* Dışarı taşan animasyonları gizler */
+}
+
+/* Yazıların okunurluğu için yarı şeffaf katman */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 58, 53, 0.65); /* Hafif şeffaf yeşil */
+    z-index: 2;
+}
+
+/* Yazı ve butonun, şeffaf katmanın üstünde durması için */
+.hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Arka plan görsellerinin kapsayıcısı */
+.hero-backgrounds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Her bir arka plan görsel katmanı */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Başlangıçta hepsi gizli */
+    
+    /* Animasyon: Adı 'kenburns', süresi 24 saniye, sonsuz döngü */
+    animation: kenburns 24s linear infinite;
+}
+
+/* Fotoğrafları atama ve animasyonları sıralama */
+.hero-backgrounds .hero-bg:nth-child(1) {
+    background-image: url('hero-bg-1.jpg');
+    animation-delay: 0s;
+}
+.hero-backgrounds .hero-bg:nth-child(2) {
+    background-image: url('hero-bg-2.jpg');
+    animation-delay: 6s; /* 2. fotoğraf 6. saniyede başlar */
+}
+.hero-backgrounds .hero-bg:nth-child(3) {
+    background-image: url('hero-bg-3.jpg');
+    animation-delay: 12s; /* 3. fotoğraf 12. saniyede başlar */
+}
+.hero-backgrounds .hero-bg:nth-child(4) {
+    background-image: url('hero-bg-4.jpg');
+    animation-delay: 18s; /* 4. fotoğraf 18. saniyede başlar */
+}
+
+/* Ken Burns Efekti Animasyonu */
+@keyframes kenburns {
+    0% {
+        opacity: 0;
+        transform: scale(1.05) rotate(1deg); /* Başlangıçta hafif büyük */
+    }
+    4% {
+        opacity: 1; /* Yavaşça belirir */
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.15) rotate(-1deg); /* Yavaşça yakınlaşır ve döner */
+    }
+    29% {
+        opacity: 0; /* Yavaşça kaybolur */
+    }
+    100% {
+        opacity: 0; /* Döngünün geri kalanında gizli kalır */
+        transform: scale(1.05) rotate(1deg);
+    }
 }
 
 .hero-title {
