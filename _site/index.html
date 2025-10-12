@@ -16,7 +16,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=latin-ext" rel="stylesheet">
 </head>
 <body>
 
@@ -53,8 +53,8 @@
         <div class="hero-bg"></div>
     </div>
     <div class="container">
-        <h1 class="hero-title">Akyol Hukuk Bürosu</h1>
-        <p class="hero-subtitle">Aile, Ceza, İş, Sigorta ve Nakliye Hukuku alanlarında uzman, sonuç odaklı avukatlık ve danışmanlık hizmetleri.</p>
+         <h1 class="hero-title">Akyol Hukuk Bürosu</h1>
+        <p class="hero-subtitle">Ticaret, Sigorta ve Nakliye Hukuku başta olmak üzere, uzmanlık gerektiren süreçlerde çözüm odaklı avukatlık hizmetleri.</p>
         <a href="#iletisim" class="cta-button">İletişime Geçin</a>
     </div>
 </section>
@@ -137,7 +137,7 @@
             <div class="contact-item"><i class="fas fa-phone-alt"></i><h3>Bizi Arayın</h3><p><a href="tel:+905542674848">0 (554) 267 48 48</a></p></div>
             <div class="contact-item"><i class="fas fa-envelope"></i><h3>E-posta Gönderin</h3><p><a href="mailto:iletisim@akyolhukuk.com.tr">iletisim@akyolhukuk.com.tr</a></p></div>
         </div>
-        <a href="mailto:iletisim@akyolhukuk.com.tr" class="cta-button contact-cta-button">Bize Ulaşın</a>
+        <button id="openContactFormBtn" class="cta-button contact-cta-button">Bize Ulaşın</button>
     </div>
 </section>
 </main>
@@ -149,30 +149,78 @@
     </div>
 </footer>
 
+
 <a href="#" id="scrollTopBtn" class="scroll-top-btn">
     <i class="fas fa-arrow-up"></i>
 </a>
 
-<script>
-    const menuToggle = document.querySelector('#menu-toggle');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 769) {
-                menuToggle.checked = false;
-            }
-        });
-    });
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>İletişim Formu</h2>
+            <p>Aşağıdaki formu doldurarak hukuki sorununuzu özetleyebilir veya danışmanlık talebinizi iletebilirsiniz.</p>
+            
+            <form action="https://formspree.io/f/xanplqpo" method="POST" class="contact-form">
+                <label for="name">Adınız Soyadınız:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Telefon Numaranız (İsteğe Bağlı):</label>
+                <input type="tel" id="phone" name="phone">
+                <label for="subject">Konu:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <button type="submit" class="form-submit-btn">Formu Gönder</button>
+            </form>
+        </div>
+    </div>
 
-    const scrollTopBtn = document.querySelector("#scrollTopBtn");
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            scrollTopBtn.classList.add("show");
-        } else {
-            scrollTopBtn.classList.remove("show");
+    <script>
+        /* MOBİL MENÜ KODU */
+        const menuToggle = document.querySelector('#menu-toggle');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 769) {
+                    menuToggle.checked = false;
+                }
+            });
+        });
+
+        /* YUKARI ÇIK BUTONU KODU */
+        const scrollTopBtn = document.querySelector("#scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        /* GELİŞTİRİLMİŞ MODAL FORM KODU */
+        const modal = document.getElementById("contactModal");
+        const openBtn = document.getElementById("openContactFormBtn");
+        const closeBtn = document.querySelector(".close-btn");
+
+        if (openBtn) {
+            openBtn.onclick = function() {
+                modal.style.display = "block";
+            }
         }
-    };
-</script>
+
+        if (closeBtn) {
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
