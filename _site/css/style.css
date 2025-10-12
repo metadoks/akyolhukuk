@@ -372,6 +372,29 @@ p, .contact-item, .page-content {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* ================================== */
+/* Form Gönderim Durum Mesajları      */
+/* ================================== */
+.form-status {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: none; /* Başlangıçta gizli */
+}
+.form-status.success {
+    display: block;
+    background-color: rgba(29, 58, 53, 0.1); /* Hafif yeşil arka plan */
+    color: var(--primary-green);
+}
+.form-status.error {
+    display: block;
+    background-color: rgba(217, 83, 79, 0.1); /* Hafif kırmızı arka plan */
+    color: #a94442;
+}
+
 /* MOBİLDE METİNLERİ ORTALA */
 @media (max-width: 768px) {
     .about-text, .about-text h2, .about-intro, .about-body p, .about-signature {
