@@ -958,5 +958,5 @@ p, .contact-item, .page-content {
 #hero, #hakkimizda, #hizmetler, #iletisim {
     /* Bu değer, sabit menünün yüksekliği kadar olmalıdır. */
     /* Gerekirse 100px'i 90px veya 110px olarak değiştirebilirsin. */
-    scroll-margin-top: 50px; 
+    scroll-margin-top: 130px; 
 }
