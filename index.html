@@ -1,52 +1,7 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol</title>
-    <meta name="description" content="İstanbul Kadıköy'de faaliyet gösteren Akyol Hukuk Bürosu, Av. Abdullah Güray Akyol liderliğinde aile hukuku, ceza hukuku, iş hukuku, sigorta hukuku ve nakliye hukuku gibi alanlarda profesyonel danışmanlık ve avukatlık hizmeti sunmaktadır.">
-
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    <link rel="stylesheet" href="style.css?v=5">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <a href="index.html" class="logo-container">
-            <img src="logo.png" alt="Akyol Hukuk Bürosu Logosu" class="logo">
-        </a>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-            <span></span> <span></span>
-            <span></span>
-        </label>
-        
-<nav class="nav-menu">
-    <a href="#hero">Ana Sayfa</a>
-    <a href="#hakkimizda">Hakkımda</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="davalar.html">Örnek Davalar</a>
-    <a href="blog.html">Blog</a> <a href="#iletisim">İletişim</a>
-</nav>
-    </div>
-</header>
-
-    <main>
+---
+layout: base.njk
+---
 <section id="hero" class="hero">
-
     <div class="hero-backgrounds">
         <div class="hero-bg"></div>
         <div class="hero-bg"></div>
@@ -55,112 +10,89 @@
     </div>
     <div class="container">
         <h1 class="hero-title">Akyol Hukuk Bürosu</h1>
-         <p class="hero-subtitle">Sigorta, Nakliye, Aile ve İş Hukuku alanlarında uzman, sonuç odaklı avukatlık ve danışmanlık hizmetleri.</p>
+        <p class="hero-subtitle">Aile, Ceza, İş, Sigorta ve Nakliye Hukuku alanlarında uzman, sonuç odaklı avukatlık ve danışmanlık hizmetleri.</p>
         <a href="#iletisim" class="cta-button">Randevu Alın</a>
     </div>
-    
 </section>
 
-        <section id="hakkimizda" class="content-section">
-            <div class="container about-container">
-                <div class="about-image">
-                    <img src="avukat_foto.png" alt="Avukat A. Güray Akyol">
-                </div>
-                <div class="about-text">
-                    <h2>Av. Abdullah Güray Akyol</h2>
-                    <p>yapım aşamasında</p>
-                </div>
-            </div>
-        </section>
+<section id="hakkimizda" class="content-section">
+<div class="container about-container">
+    
+    <div class="about-left-column">
+        <div class="about-image">
+            <img src="/images/avukat_foto.png" alt="Avukat Abdullah Güray Akyol">
+        </div>
+        <a href="/davalar" class="cta-secondary">Emsal Kararları İnceleyin</a>
+    </div>
+    
+    <div class="about-text">
+        <h2>Av. Abdullah Güray Akyol</h2>
+        <p class="about-intro">
+            30 yılı aşkın mesleki tecrübe ile, karmaşık hukuki sorunlara stratejik ve sonuç odaklı çözümler üretiyoruz.
+        </p>
+        <hr class="divider">
+        <div class="about-body">
+            <p>1992 yılında Ankara Üniversitesi Hukuk Fakültesi'nden mezun olduktan sonra, avukatlık kariyerime 1993 yılında Ankara Barosu'na bağlı olarak başladım. 2003 yılından bu yana ise mesleki faaliyetlerime İstanbul Barosu'na kayıtlı serbest avukat olarak devam etmekteyim.</p>
+            <p>Kariyerim boyunca, özellikle Uluslararası Nakliye, Ticaret ve Sigorta Hukuku gibi teknik alanlarda uzmanlaşarak, müvekkillerimi başarıyla temsil ettim. Elde ettiğimiz emsal niteliğindeki mahkeme kararları, hukuki süreçlerdeki titiz ve ısrarlı yaklaşımımızın bir göstergesidir.</p>
+        </div>
+        <p class="about-signature">
+            Abdullah Güray Akyol
+        </p>
+    </div>
 
-        <section id="hizmetler" class="content-section-dark">
-            <div class="container">
-                <h2 class="section-title">Temel Faaliyet Alanlarımız</h2>
-                <div class="hizmetler-grid">
+</div>
+</section>
+
+<section id="hizmetler" class="content-section-dark">
+    <div class="container">
+        <h2 class="section-title">Temel Faaliyet Alanlarımız</h2>
+
+<div class="hizmetler-grid">
     <div class="hizmet-karti">
+        <i class="fas fa-ship hizmet-icon"></i>
+        <h3>Uluslararası Nakliye Hukuku</h3>
+        <p>Kara, deniz ve hava taşımacılığından kaynaklanan uyuşmazlıklar, navlun alacakları ve CMR Konvansiyonu uygulamaları.</p>
+    </div>
+    <div class="hizmet-karti">
+        <i class="fas fa-briefcase hizmet-icon"></i>
+        <h3>Ticaret ve Şirketler Hukuku</h3>
+        <p>Ticari sözleşmeler, şirket kuruluşu, alacak takipleri ve uluslararası ticari borçların tahsili konularında hukuki danışmanlık.</p>
+    </div>
+    <div class="hizmet-karti">
+        <i class="fas fa-shield-alt hizmet-icon"></i>
         <h3>Sigorta Hukuku</h3>
-        <p>Trafik kazaları, mal ve sorumluluk sigortaları gibi uyuşmazlıklarda hukuki destek ve danışmanlık.</p>
+        <p>Trafik kazaları, mal ve sorumluluk sigortaları, sigorta şirketlerinin iflas süreçleri ve teminatlardan alacakların tahsili.</p>
     </div>
     <div class="hizmet-karti">
-        <h3>İş ve Sosyal Güvenlik Hukuku</h3>
-        <p>İşe iade davaları, kıdem ve ihbar tazminatı alacakları, iş kazaları ve hizmet tespiti davaları.</p>
+        <i class="fas fa-landmark hizmet-icon"></i>
+        <h3>Vakıf Hukuku</h3>
+        <p>Vakıf malları üzerindeki hukuki süreçler, tapu terkinleri ve özellikle münhal vakıflar konusundaki uyuşmazlıklar.</p>
     </div>
     <div class="hizmet-karti">
-        <h3>Nakliye Hukuku</h3>
-        <p>Taşıma sözleşmeleri, lojistik ve navlun alacakları konularında hukuki danışmanlık hizmetleri.</p>
+        <i class="fas fa-gavel hizmet-icon"></i>
+        <h3>İdare Hukuku</h3>
+        <p>İdarenin eylem ve işlemlerine karşı açılacak tam yargı ve iptal davaları gibi idari uyuşmazlıkların çözümü.</p>
     </div>
     <div class="hizmet-karti">
-        <h3>Aile ve Miras Hukuku</h3>
-        <p>Anlaşmalı/çekişmeli boşanma, velayet, nafaka, mal rejimi tasfiyesi ve miras hukuku uyuşmazlıkları.</p>
+        <i class="fas fa-file-invoice-dollar hizmet-icon"></i>
+        <h3>İcra ve İflas Hukuku</h3>
+        <p>Her türlü alacağın icra yoluyla takibi, iflas süreçlerinin yönetimi ve borçların yeniden yapılandırılması hizmetleri.</p>
     </div>
 </div>
-            </div>
-        </section>
+
+
+    </div>
+</section>
 
 <section id="iletisim" class="content-section">
-            <div class="container contact-container">
-                <h2 class="section-title">Bizimle İletişime Geçin</h2>
-                <p class="contact-description">Hukuki bir sorunuz mu var? Bir danışmanlık randevusu ayarlamak veya detaylı bilgi almak için bizimle iletişime geçmekten çekinmeyin.</p>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Adresimiz</h3>
-                        <p>Osmanağa Mh. Söğütlüçeşme Cad. No:64 K:7 D:145 Kadıköy-İstanbul</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Bizi Arayın</h3>
-                        <p><a href="tel:+905542674848">0 (554) 267 48 48</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h3>E-posta Gönderin</h3>
-                        <p><a href="mailto:iletisim@akyolhukuk.com.tr">iletisim@akyolhukuk.com.tr</a></p>
-                    </div>
-                </div>
-
-                <a href="mailto:akyolhukuk@gmail.com" class="cta-button contact-cta-button">Randevu Talep Edin</a>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol. Tüm Hakları Saklıdır.</p>
-            <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
+    <div class="container contact-container">
+        <h2 class="section-title">Bizimle İletişime Geçin</h2>
+        <p class="contact-description">Hukuki bir sorunuz mu var? Bir danışmanlık randevusu ayarlamak veya detaylı bilgi almak için bizimle iletişime geçmekten çekinmeyin.</p>
+        <div class="contact-grid">
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><h3>Adresimiz</h3><p>Osmanağa Mh. Söğütlüçeşme Cad. No:64 K:7 D:145 Kadıköy-İstanbul</p></div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i><h3>Bizi Arayın</h3><p><a href="tel:+905542674848">0 (554) 267 48 48</a></p></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><h3>E-posta Gönderin</h3><p><a href="mailto:iletisim@akyolhukuk.com.tr">iletisim@akyolhukuk.com.tr</a></p></div>
         </div>
-    </footer>
-</footer>
-    <a href="#" id="scrollTopBtn" class="scroll-top-btn">
-    <i class="fas fa-arrow-up"></i>
-    </a>
-<script>
-    /* ---- Mevcut Mobil Menü Kapatma Kodun ---- */
-    const menuToggle = document.querySelector('#menu-toggle');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.checked = false;
-        });
-    });
-    /* ---- Mevcut Kodun Sonu ---- */
-
-
-    /* ---- YENİ EKLENECEK YUKARI ÇIK BUTONU KODU ---- */
-    const scrollTopBtn = document.querySelector("#scrollTopBtn");
-
-    // Kullanıcı sayfayı aşağı kaydırdığında bu fonksiyon çalışır
-    window.onscroll = function() {
-        // Eğer 300 pikselden fazla aşağı kaydırılmışsa...
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            scrollTopBtn.classList.add("show"); // Butonu göster
-        } else {
-            scrollTopBtn.classList.remove("show"); // Butonu gizle
-        }
-    };
-    /* ---- Yeni Kodun Sonu ---- */
-</script>
-</body>
-</html>
+        <a href="mailto:iletisim@akyolhukuk.com.tr" class="cta-button contact-cta-button">Randevu Talep Edin</a>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<main>
+    <article class="page-container post-full">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time datetime="{{ date }}">{{ date | postDate }}</time>
+                <span class="bull">&bull;</span> {{ data.category }}
+            </div>
+            <h1 class="post-full-title">{{ title }}</h1>
+        </header>
+
+        {% if image %}
+        <figure class="post-full-image">
+            <img src="{{ image }}" alt="{{ imageAlt }}">
+        </figure>
+        {% endif %}
+
+        <section class="post-full-content">
+            {{ content | safe }}
+        </section>
+    </article>
+</main>

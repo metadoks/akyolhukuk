@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol</title>
+    <meta name="description" content="İstanbul Kadıköy'de faaliyet gösteren Akyol Hukuk Bürosu, Av. Abdullah Güray Akyol liderliğinde aile hukuku, ceza hukuku, iş hukuku, sigorta hukuku ve nakliye hukuku gibi alanlarda profesyonel danışmanlık ve avukatlık hizmeti sunmaktadır.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="/" class="logo-container">
+            <img src="/images/logo.png" alt="Akyol Hukuk Bürosu Logosu" class="logo">
+        </a>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <nav class="nav-menu">
+            <a href="/">Ana Sayfa</a>
+            <a href="/#hakkimizda">Hakkımda</a>
+            <a href="/#hizmetler">Hizmetler</a>
+            <a href="/davalar/">Örnek Davalar</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#iletisim">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="page-container">
+    <h1 class="page-title">Örnek Davalar</h1>
+    <p class="page-content">Bu bölüm yakında güncellenecektir. Emsal teşkil eden dava özetleri ve başarı hikayelerimiz burada yer alacaktır.</p>
+</div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol. Tüm Hakları Saklıdır.</p>
+        <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
+    </div>
+</footer>
+
+<a href="#" id="scrollTopBtn" class="scroll-top-btn">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    const menuToggle = document.querySelector('#menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 769) {
+                menuToggle.checked = false;
+            }
+        });
+    });
+
+    const scrollTopBtn = document.querySelector("#scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    };
+</script>
+
+</body>
+</html>

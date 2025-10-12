@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol</title>
+    <meta name="description" content="İstanbul Kadıköy'de faaliyet gösteren Akyol Hukuk Bürosu, Av. Abdullah Güray Akyol liderliğinde aile hukuku, ceza hukuku, iş hukuku, sigorta hukuku ve nakliye hukuku gibi alanlarda profesyonel danışmanlık ve avukatlık hizmeti sunmaktadır.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="/" class="logo-container">
+            <img src="/images/logo.png" alt="Akyol Hukuk Bürosu Logosu" class="logo">
+        </a>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <nav class="nav-menu">
+            <a href="/">Ana Sayfa</a>
+            <a href="/#hakkimizda">Hakkımda</a>
+            <a href="/#hizmetler">Hizmetler</a>
+            <a href="/davalar/">Örnek Davalar</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#iletisim">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <main>
+    <article class="page-container post-full">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time datetime="Sat Oct 11 2025 03:00:00 GMT+0300 (GMT+03:00)">11 Ekim 2025</time>
+                <span class="bull">&bull;</span> 
+            </div>
+            <h1 class="post-full-title">Uluslararası Taşımacılıkta CMR Konvansiyonu&#39;nun Önemi</h1>
+        </header>
+
+        
+        <figure class="post-full-image">
+            <img src="/images/hero-bg-1.jpg" alt="Bir adliye binasının heybetli mermer sütunu">
+        </figure>
+        
+
+        <section class="post-full-content">
+            <p>CMR Konvansiyonu (Convention on the Contract for the International Carriage of Goods by Road), uluslararası karayolu ile eşya taşımacılığını düzenleyen en temel uluslararası anlaşmadır. Türkiye'nin de taraf olduğu bu anlaşma, taşıma sözleşmesinin tarafları olan gönderici, taşıyıcı ve alıcının hak ve yükümlülüklerini standart hale getirerek ticareti kolaylaştırır.</p>
+<h3>Taşıyıcının Sorumluluğu Ne Zaman Başlar?</h3>
+<p>CMR uyarınca taşıyıcının sorumluluğu, eşyayı taşıma amacıyla teslim aldığı andan, alıcıya teslim ettiği ana kadar devam eder. Bu süreçte eşyanın kaybolmasından, hasar görmesinden veya teslimattaki gecikmeden taşıyıcı sorumludur.</p>
+<h3>Sorumluluk Sınırları ve İstisnalar</h3>
+<p>Konvansiyon, taşıyıcının sorumluluğunu belirli bir limit (Özel Çekme Hakkı - SDR) ile sınırlar. Ancak, zararın taşıyıcının &quot;kasıtlı veya pervasızca davranışı&quot; sonucu meydana gelmesi durumunda bu sorumluluk limitleri uygulanmaz. Taşıyıcının sorumluluktan kurtulduğu durumlar (mücbir sebepler, göndericinin hatası vb.) da yine CMR'da açıkça düzenlenmiştir. Nakliye hukukunda uzman bir avukat, bu teknik detaylarda haklarınızı korumanızı sağlar.</p>
+
+        </section>
+    </article>
+</main>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol. Tüm Hakları Saklıdır.</p>
+        <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
+    </div>
+</footer>
+
+<a href="#" id="scrollTopBtn" class="scroll-top-btn">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    const menuToggle = document.querySelector('#menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 769) {
+                menuToggle.checked = false;
+            }
+        });
+    });
+
+    const scrollTopBtn = document.querySelector("#scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    };
+</script>
+
+</body>
+</html>

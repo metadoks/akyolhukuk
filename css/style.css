@@ -1,0 +1,962 @@
+/* Kök Değişkenler ve Genel Stiller */
+:root {
+    --primary-green: #1d3a35;
+    --light-background: #fdfbf7;
+    --accent-cream: #e8e2d8;
+    --dark-text: #212121;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* style.css dosyanın üst kısımları */
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text);
+    background-color: var(--light-background);
+    animation: fadeIn 1s ease-in-out;
+    
+    /* YENİ EKLENEN SATIRLAR */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfanın en az ekran boyu kadar uzun olmasını sağlar */
+
+    overflow-x: hidden; /* Yatayda taşmayı engeller */
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+main {
+    flex-grow: 1; /* main etiketinin mevcut boşluğu dolduracak şekilde büyümesini sağlar */
+}
+/* YENİ KOD BLOĞUNU BURAYA EKLE */
+/* Kopyalanması gerekebilecek metinler için seçimi tekrar aktif etme */
+p, .contact-item, .page-content {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Başlık ve Navigasyon */
+.header {
+    background: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent-cream);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* YENİ DEĞİŞİKLİK: Sağ boşluk 15px kalsın ama sol boşluk 0 olsun */
+    padding: 0 15px 0 0; 
+}
+
+.logo {
+    height: 160px; 
+    width: auto;
+    margin-top: -17px;
+    margin-bottom: -68px;
+    
+    /* YENİ EKLENEN SATIR: Logoyu sola doğru çeker */
+    margin-left: -130px;
+    
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+.nav-menu a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-green);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+/* ================================== */
+/* Hamburger Menü Düzeltmesi          */
+/* ================================== */
+
+/* Hamburger Menü İkonunu ve Checkbox'ı Masaüstünde Gizle */
+.menu-toggle,
+.hamburger-menu {
+    display: none;
+}
+/* Ana Karşılama (Hero) Alanı */
+/* ================================== */
+/* Hero Section - Animasyonlu Arka Plan */
+/* ================================== */
+
+.hero {
+    position: relative; /* İçindeki absolut pozisyonlu elemanlar için gereklidir */
+    color: var(--light-background);
+    height: 90vh; /* Yüksekliğini biraz artırarak daha etkileyici yapalım */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden; /* Dışarı taşan animasyonları gizler */
+}
+
+/* Yazıların okunurluğu için yarı şeffaf katman */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 58, 53, 0.65); /* Hafif şeffaf yeşil */
+    z-index: 2;
+}
+
+/* Yazı ve butonun, şeffaf katmanın üstünde durması için */
+.hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Arka plan görsellerinin kapsayıcısı */
+.hero-backgrounds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Her bir arka plan görsel katmanı */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Başlangıçta hepsi gizli */
+    
+    /* Animasyon: Adı 'kenburns', süresi 24 saniye, sonsuz döngü */
+    animation: kenburns 24s linear infinite;
+}
+
+/* Fotoğrafları atama ve animasyonları sıralama */
+.hero-backgrounds .hero-bg:nth-child(1) {
+    background-image: url('/images/hero-bg-1.jpg');
+    animation-delay: 0s;
+    background-position: center top; 
+}
+.hero-backgrounds .hero-bg:nth-child(2) {
+    background-image: url('/images/hero-bg-2.jpg');
+    animation-delay: 6s; /* 2. fotoğraf 6. saniyede başlar */
+    background-position: center top; 
+}
+.hero-backgrounds .hero-bg:nth-child(3) {
+    background-image: url('/images/hero-bg-3.jpg');
+    animation-delay: 12s; /* 3. fotoğraf 12. saniyede başlar */
+    background-position: top bottom; 
+}
+.hero-backgrounds .hero-bg:nth-child(4) {
+    background-image: url('/images/hero-bg-4.jpg');
+    animation-delay: 18s; /* 4. fotoğraf 18. saniyede başlar */
+    background-position: center center; 
+}
+
+/* Ken Burns Efekti Animasyonu */
+@keyframes kenburns {
+    0% {
+        opacity: 0;
+        transform: scale(1.05) rotate(1deg); /* Başlangıçta hafif büyük */
+    }
+    4% {
+        opacity: 1; /* Yavaşça belirir */
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.15) rotate(-1deg); /* Yavaşça yakınlaşır ve döner */
+    }
+    29% {
+        opacity: 0; /* Yavaşça kaybolur */
+    }
+    100% {
+        opacity: 0; /* Döngünün geri kalanında gizli kalır */
+        transform: scale(1.05) rotate(1deg);
+    }
+}
+
+/* ================================== */
+/* Hero Bölümü - Tasarım Düzeltmesi   */
+/* ================================== */
+
+
+/* ================================== */
+/* Hero Bölümü - Final Tasarımı       */
+/* ================================== */
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--accent-cream);
+
+    /* YENİ VE GÜNCELLENMİŞ STİLLER */
+    letter-spacing: 2.5px; /* Harf aralığını biraz artırdık */
+    /* Daha belirgin ve derin bir gölge efekti */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    position: relative;
+    padding-top: 1.5rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--accent-cream);
+
+    /* YENİ VE GÜNCELLENMİŞ STİL */
+    /* Alt başlık için de daha belirgin bir gölge ekledik */
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Dekoratif Çizgi */
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--accent-cream);
+    opacity: 0.7;
+}
+
+/* Hero Butonunun Final Stili */
+.hero .cta-button {
+    background: transparent;
+    color: var(--accent-cream);
+    padding: 12px 35px;
+    text-decoration: none;
+    border: 2px solid var(--accent-cream);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+}
+
+.hero .cta-button:hover {
+    background: var(--accent-cream);
+    color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+/* Genel İçerik Bölümleri */
+.content-section { padding: 80px 0; }
+.content-section-dark { padding: 80px 0; background-color: var(--primary-green); color: var(--light-background); }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+.content-section-dark .section-title { color: var(--light-background); }
+
+/* ================================== */
+/* Hakkımda Bölümü - Final İki Sütunlu Tasarım */
+/* ================================== */
+
+/* Konteynerin temel düzeni (mobil için) */
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Mobilde her şey alt alta */
+    align-items: center; /* Mobilde her şey ortalı */
+    gap: 40px;
+}
+
+/* Sol Sütun (Fotoğraf ve Buton) */
+.about-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center 20%; 
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--primary-green), 0 0 0 8px var(--accent-cream), 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Sağ Sütun (Metin) */
+.about-text {
+    flex: 1; /* Mevcut alanı doldur */
+}
+
+/* Metin Stilleri */
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 1.5rem; color: var(--primary-green); }
+.about-intro { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1.6; color: var(--dark-text); margin-bottom: 2rem; }
+.divider { border: none; height: 1px; background-color: var(--accent-cream); width: 100px; margin: 0 0 2rem 0; }
+.about-body p { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 1.5rem; }
+.about-signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--dark-text); text-align: right; margin-top: 2rem; }
+
+/* Butonun Stili */
+.cta-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid var(--primary-green);
+    border-radius: 5px;
+    color: var(--primary-green);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+    background-color: var(--primary-green);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* MOBİLDE METİNLERİ ORTALA */
+@media (max-width: 768px) {
+    .about-text, .about-text h2, .about-intro, .about-body p, .about-signature {
+        text-align: center;
+    }
+    .divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* MASAÜSTÜNDE İKİ SÜTUNLU YAPIYI AKTİF ET */
+@media (min-width: 769px) {
+    .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 50px;
+    }
+    .about-left-column {
+        flex: 0 0 280px;
+    }
+}
+
+/* ================================== */
+/* Hizmetler Bölümü - Final Geliştirilmiş Tasarım */
+/* ================================== */
+
+.hizmetler-grid {
+    display: grid;
+    /* Mobil ve tablet uyumu için otomatik ızgara yapısı */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.hizmet-karti {
+    /* Yeni Premium Görsel Stiller */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(232, 226, 216, 0.15);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center; /* İkonu ve metinleri ortalamak için */
+    
+    /* Mevcut Giriş Animasyonu (Korundu) */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFadeIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    
+    /* Geliştirilmiş Geçiş Efektleri */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animasyon Gecikmeleri (6 kart için güncellendi) */
+.hizmet-karti:nth-child(1) { animation-delay: 0.1s; }
+.hizmet-karti:nth-child(2) { animation-delay: 0.2s; }
+.hizmet-karti:nth-child(3) { animation-delay: 0.3s; }
+.hizmet-karti:nth-child(4) { animation-delay: 0.4s; }
+.hizmet-karti:nth-child(5) { animation-delay: 0.5s; }
+.hizmet-karti:nth-child(6) { animation-delay: 0.6s; }
+
+/* Geliştirilmiş Hover Efekti */
+.hizmet-karti:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cream);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Yeni Eklenen İkon Stili */
+.hizmet-icon {
+    font-size: 2.5rem;
+    color: var(--accent-cream);
+    margin-bottom: 1.5rem;
+}
+
+/* Geliştirilmiş Başlık Stili */
+.hizmet-karti h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+/* Geliştirilmiş Paragraf Stili */
+.hizmet-karti p {
+    color: rgba(232, 226, 216, 0.8);
+    line-height: 1.7;
+}
+
+/* Ana Bölüm Başlığına Son Dokunuş */
+#hizmetler .section-title {
+    letter-spacing: 1px;
+}
+/* ================================== */
+/* İletişim Bölümü Yeniden Tasarımı   */
+/* ================================== */
+
+#iletisim {
+    text-align: center;
+    background-color: var(--light-background);
+}
+
+/* ANA BAŞLIK İÇİN PREMIUM STİL */
+#iletisim .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-green);
+    letter-spacing: 1px;
+}
+
+/* AÇIKLAMA METNİ İÇİN PREMIUM STİL */
+.contact-description {
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* IZGARA YAPISI (Değişmedi) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+/* KARTLARIN GENEL STİLİ (Değişmedi) */
+.contact-item {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-cream);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* İKON STİLLERİ (Değişmedi) */
+.contact-item i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* KART BAŞLIKLARI İÇİN PREMIUM STİL */
+.contact-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--dark-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* KART İÇERİK METİNLERİ İÇİN PREMIUM STİL */
+.contact-item p, .contact-item p a {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    font-weight: 500;
+}
+
+/* KART İÇİ LİNKLER İÇİN PREMIUM STİL */
+.contact-item p a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+    color: #0d2722;
+    text-decoration: underline;
+}
+
+/* İletişim Bölümü için CTA Buton Stili */
+/* İletişim Bölümü için CTA Buton Stili */
+.contact-cta-button {
+    margin-top: 4rem;
+    display: inline-block;
+    background-color: var(--primary-green); /* Arka planı tekrar yeşil yap */
+    color: var(--light-background);      /* Yazıyı tekrar krem yap */
+    border: 2px solid var(--primary-green);
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.contact-cta-button:hover {
+    background-color: #0d2722; /* Daha koyu yeşil */
+    color: var(--light-background);
+    border-color: #0d2722;
+    transform: translateY(-2px);
+}
+
+/* Mobil uyum: Grid'in tek sütuna düşmesi zaten minmax ile ayarlandı */
+
+/* Altbilgi (Footer) */
+.footer { background: var(--primary-green); color: var(--accent-cream); text-align: center; padding: 30px 0; }
+.footer .disclaimer { font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Animasyonların Tanımlanması (Keyframes) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================== */
+/* Yeni Sayfa İçerik Stilleri         */
+/* ================================== */
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px; /* Sayfa içeriğine boşluk ver */
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-green);
+}
+
+.page-content {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* ================================== */
+/* Yukarı Çık Butonu Stilleri          */
+/* ================================== */
+/* ================================== */
+/* Yukarı Çık Butonu (Geliştirilmiş)    */
+/* ================================== */
+
+/* Butonun "nefes alma" animasyonu */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Konumu sağ alt köşe olarak düzeltiyoruz */
+    z-index: 102;
+    
+    width: 55px;  /* Boyutunu biraz büyüttük */
+    height: 55px;
+    background-color: var(--primary-green);
+    color: var(--light-background);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem; /* İkonu büyüttük */
+    
+    border-radius: 50%;
+    text-decoration: none;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: pulse 2s infinite; /* Animasyonu ekliyoruz */
+}
+
+.scroll-top-btn:hover {
+    background-color: #0d2722;
+    animation-play-state: paused; /* Hover olunca animasyon dursun */
+    transform: scale(1.1);
+}
+/* ================================== */
+/* Logo Giriş Animasyonu              */
+/* ================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================== */
+/* Blog Sayfası Stilleri              */
+/* ================================== */
+
+.blog-grid {
+    display: grid;
+    /* Masaüstünde 3 sütun, tablette 2, mobilde 1 olacak şekilde ayarla */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 4rem;
+}
+
+.post-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* Resmin köşelerinin yuvarlak olmasını sağlar */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.post-image-link {
+    display: block;
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Resmin oranını bozmadan alanı kaplar */
+    display: block;
+}
+
+.post-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Kartların boyunu eşitler */
+}
+
+.post-category {
+    background-color: var(--primary-green);
+    color: var(--accent-cream);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Kendini sola yaslar */
+}
+
+.post-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: var(--dark-text);
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: var(--primary-green);
+}
+
+.post-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    flex-grow: 1; /* Boşluğu doldurarak "Devamını Oku" linkini en alta iter */
+    margin-bottom: 20px;
+}
+
+.read-more-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    align-self: flex-end; /* Kendini sağa yaslar */
+    transition: transform 0.3s ease;
+}
+
+.read-more-link:hover {
+    transform: translateX(5px);
+}
+/* Mobil Uyum (Responsive) */
+@media(min-width: 769px) {
+    .about-container {
+        flex-direction: row;
+        text-align: left;
+    }
+    .about-text h2 {
+        text-align: left;
+    }
+}
+
+/* ================================== */
+/* Mobil Uyum (Responsive) Ayarları   */
+/* ================================== */
+
+/* ================================== */
+/* Mobil Uyum (Responsive) Ayarları   */
+/* ================================== */
+
+@media(max-width: 768px) {
+
+    /* --- Genel Mobil Ayarları --- */
+    .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+
+    /* YENİ DEĞİŞİKLİKLER */
+    color: var(--accent-cream); /* Rengi daha sıcak krem tonuyla güncelledik */
+    /* Daha zengin ve katmanlı bir gölge efekti ekledik */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+    .hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    position: relative;
+    padding-top: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* YENİ DEĞİŞİKLİKLER */
+    color: var(--accent-cream); /* Rengi daha sıcak krem tonuyla güncelledik */
+    /* Ana başlıkla uyumlu olması için buraya da daha belirgin bir gölge ekledik */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+    .hizmetler-grid { grid-template-columns: 1fr; }
+    .about-text h2 { text-align: center; }
+
+
+    /* === HAMBURGER MENÜ SİSTEMİ === */
+
+    /* 1. Header Konteynerini Tekrar Yan Yana Yapıyoruz */
+    .header .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0; /* Üst ve alt boşluğu minimuma indirdik */
+        position: relative;
+    }
+    
+    .logo {
+        margin: 0;
+        height: 85px; /* Logoyu daha belirgin hale getirdik */
+        z-index: 101;
+        
+        /* Yeni efekti ekledik */
+        animation: fadeInDown 0.8s ease-in-out both;
+    }
+
+    /* 2. Menü Linklerini Varsayılan Olarak Gizliyoruz */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        background-color: var(--primary-green);
+        
+        /* Menüyü ekranın dışına taşıyoruz */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Tüm ekranı kaplasın */
+        transform: translateX(100%); /* Sağa doğru tamamen gizle */
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+    }
+    
+    .nav-menu a {
+        color: var(--light-background);
+        font-size: 1.5rem;
+    }
+
+    /* 3. Hamburger İkonunu (3 Çizgi) Stillendiriyoruz */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 101;
+        
+        position: absolute;
+        right: 25px; /* Konumunu biraz ayarladık */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .hamburger-menu span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-green);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 4. Sihirli Kısım: Menüyü Açma ve İkonu 'X' Yapma */
+    .menu-toggle {
+        display: none; /* Checkbox'ı gizle */
+    }
+
+    /* Checkbox işaretlendiğinde (ikona tıklandığında)... */
+    .menu-toggle:checked ~ .nav-menu {
+        transform: translateX(0); /* Menüyü ekranın içine kaydır */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: var(--light-background); /* Çizgi rengini değiştir */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(2) {
+        opacity: 0; /* Ortadaki çizgiyi yok et */
+    }
+
+    .menu-toggle:checked ~ .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background-color: var(--light-background); /* Çizgi rengini değiştir */
+    }
+    /* === MOBİL İÇİN HERO ARKA PLAN DÜZELTMESİ === */
+
+    /* 1. Animasyonu mobil için tamamen durdur */
+    .hero-bg {
+        animation: none;
+    }
+    
+    /* 2. Sadece ilk fotoğrafın görünmesini sağla, diğerlerini gizle */
+    .hero-backgrounds .hero-bg:nth-child(1) {
+        opacity: 1; /* İlk fotoğrafı görünür yap */
+    }
+    
+    .hero-backgrounds .hero-bg:not(:nth-child(1)) {
+        display: none; /* İlk fotoğraf dışındaki diğer tüm fotoğrafları yok et */
+    }
+
+    /* Gerekirse hero yüksekliğini mobil için ayarlayabiliriz */
+    .hero {
+        height: 80vh; 
+    }
+
+}
+
+
+/* Navigasyon Linklerinin Doğru Yerde Durması İçin Kaydırma Ayarı */
+#hero, #hakkimizda, #hizmetler, #iletisim {
+    /* Bu değer, sabit menünün yüksekliği kadar olmalıdır. */
+    /* Gerekirse 100px'i 90px veya 110px olarak değiştirebilirsin. */
+    scroll-margin-top: 50px; 
+}

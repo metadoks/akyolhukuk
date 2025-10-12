@@ -1,124 +1,23 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol</title>
-    <meta name="description" content="İstanbul Kadıköy'de faaliyet gösteren Akyol Hukuk Bürosu, Av. Abdullah Güray Akyol liderliğinde aile hukuku, ceza hukuku, iş hukuku, sigorta hukuku ve nakliye hukuku gibi alanlarda profesyonel danışmanlık ve avukatlık hizmeti sunmaktadır.">
-
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    <link rel="stylesheet" href="style.css?v=5">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <a href="index.html" class="logo-container">
-            <img src="logo.png" alt="Akyol Hukuk Bürosu Logosu" class="logo">
+---
+layout: base.njk
+permalink: /blog/index.html
+---
+<div class="page-container">
+    <h1 class="page-title">Hukuki Makaleler & Blog</h1>
+    <p class="page-content">Güncel hukuki gelişmeler, sıkça sorulan soruların yanıtları ve uzmanlık alanlarımızla ilgili detaylı bilgilendirmeler.</p>
+<div class="blog-grid">
+    {%- for post in collections.posts -%}
+    <article class="post-card">
+        <a href="{{ post.url }}" class="post-image-link">
+            <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="post-image">
         </a>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-            <span></span> <span></span>
-            <span></span>
-        </label>
-        
-<nav class="nav-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="index.html#hakkimizda">Hakkımda</a>
-    <a href="index.html#hizmetler">Hizmetler</a>
-    <a href="davalar.html">Örnek Davalar</a>
-    <a href="blog.html">Blog</a> <a href="index.html#iletisim">İletişim</a>
-</nav>
-    </div>
-</header>
-
-<main>
-    <div class="page-container">
-        <h1 class="page-title">Hukuki Makaleler & Blog</h1>
-        <p class="page-content">Güncel hukuki gelişmeler, sıkça sorulan soruların yanıtları ve uzmanlık alanlarımızla ilgili detaylı bilgilendirmeler.</p>
-        
-        <div class="blog-grid">
-            <article class="post-card">
-                <a href="#" class="post-image-link"><img src="https://placehold.co/600x400/2A4B3D/EAE0D5?text=Görsel" alt="Blog Yazısı Görseli" class="post-image"></a>
-                <div class="post-content">
-                    <div class="post-category">Aile Hukuku</div>
-                    <h2 class="post-title"><a href="#">Anlaşmalı Boşanma Süreci Nasıl İşler? Adım Adım Rehber</a></h2>
-                    <p class="post-excerpt">Anlaşmalı boşanma, evlilik birliğini sonlandırmak isteyen çiftler için en hızlı ve en az yıpratıcı yoldur. Bu yazıda, süreç hakkında bilmeniz gereken her şeyi özetledik...</p>
-                    <a href="#" class="read-more-link">Devamını Oku →</a>
-                </div>
-            </article>
-            
-            <article class="post-card">
-                <a href="#" class="post-image-link"><img src="https://placehold.co/600x400/2A4B3D/EAE0D5?text=Görsel" alt="Blog Yazısı Görseli" class="post-image"></a>
-                <div class="post-content">
-                    <div class="post-category">İş Hukuku</div>
-                    <h2 class="post-title"><a href="#">İşe İade Davası Şartları Nelerdir? Haklarınızı Bilin</a></h2>
-                    <p class="post-excerpt">İş güvencesi kapsamında olan bir işçinin iş sözleşmesinin haksız yere feshedilmesi durumunda, işe iade davası açma hakkı doğar. Peki bu davanın şartları nelerdir?...</p>
-                    <a href="#" class="read-more-link">Devamını Oku →</a>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <a href="#" class="post-image-link"><img src="https://placehold.co/600x400/2A4B3D/EAE0D5?text=Görsel" alt="Blog Yazısı Görseli" class="post-image"></a>
-                <div class="post-content">
-                    <div class="post-category">Ceza Hukuku</div>
-                    <h2 class="post-title"><a href="#">Ceza Yargılamasında Tutukluluk Süreleri ve Koşulları</a></h2>
-                    <p class="post-excerpt">Tutuklama, en ağır koruma tedbiridir ve kanunda belirtilen sıkı koşullara tabidir. Bu yazımızda tutukluluk sürelerini ve itiraz yollarını inceledik...</p>
-                    <a href="#" class="read-more-link">Devamını Oku →</a>
-                </div>
-            </article>
+        <div class="post-content">
+            <div class="post-category">{{ post.data.category }}</div>
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <p class="post-excerpt">{{ post.data.excerpt }}</p>
+            <a href="{{ post.url }}" class="read-more-link">Devamını Oku →</a>
         </div>
-    </div>
-</main>
-    
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol. Tüm Hakları Saklıdır.</p>
-            <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
-        </div>
-    </footer>
-</footer>
-    <a href="#" id="scrollTopBtn" class="scroll-top-btn">
-    <i class="fas fa-arrow-up"></i>
-    </a>
-<script>
-    /* ---- Mevcut Mobil Menü Kapatma Kodun ---- */
-    const menuToggle = document.querySelector('#menu-toggle');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.checked = false;
-        });
-    });
-    /* ---- Mevcut Kodun Sonu ---- */
-
-
-    /* ---- YENİ EKLENECEK YUKARI ÇIK BUTONU KODU ---- */
-    const scrollTopBtn = document.querySelector("#scrollTopBtn");
-
-    // Kullanıcı sayfayı aşağı kaydırdığında bu fonksiyon çalışır
-    window.onscroll = function() {
-        // Eğer 300 pikselden fazla aşağı kaydırılmışsa...
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            scrollTopBtn.classList.add("show"); // Butonu göster
-        } else {
-            scrollTopBtn.classList.remove("show"); // Butonu gizle
-        }
-    };
-    /* ---- Yeni Kodun Sonu ---- */
-</script>
-</body>
-</html>
+    </article>
+    {%- endfor -%}
+</div>
+</div>
