@@ -4,7 +4,7 @@ module.exports = function(eleventyConfig) {
     // Statik dosyaları kopyalama komutları
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addPassthroughCopy("favicon");
+    eleventyConfig.addPassthroughCopy("./favicon/");
 
     // Tarih formatı için filtre
     eleventyConfig.addFilter("postDate", (dateObj) => {
