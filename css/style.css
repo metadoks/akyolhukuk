@@ -60,36 +60,37 @@ p, .contact-item, .page-content {
 /* Başlık ve Navigasyon */
 .header {
     background: #fff;
-    padding: 1rem 0;
+    /* Header'ın yüksekliğini menüye göre ayarlıyoruz, logo artık bağımsız */
+    padding: 1.5rem 0; 
     border-bottom: 1px solid var(--accent-cream);
-    position: sticky;
-    top: 0;
+    position: relative; /* Bu çok önemli! Logo buna göre hizalanacak. */
     z-index: 1000;
-    transition: box-shadow 0.3s ease;
 }
 
+
+/* Konteynerin içindeki menünün, logonun altına girmemesi için sağa yaslanmasını sağladık */
 .header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Menüyü her zaman sağa yasla */
     align-items: center;
-    /* YENİ DEĞİŞİKLİK: Sağ boşluk 15px kalsın ama sol boşluk 0 olsun */
-    padding: 0 15px 0 0; 
 }
+
+.logo-container {
+    position: absolute; /* Logoyu normal akıştan çıkardık */
+    top: 1px;         /* Header'ın üst kenarından 15px yukarıda başlasın */
+    left: 25px;         /* Ekranın sol kenarından 25px içeride dursun */
+    z-index: 1001;      /* Menünün üstünde durmasını sağlar */
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.03); /* Hafifçe büyüme efekti */
+}
+
 
 .logo {
-    height: 160px; 
+    height: 180px;      /* Logoyu daha da büyüttük */
     width: auto;
-    margin-top: -17px;
-    margin-bottom: -68px;
-    
-    /* YENİ EKLENEN SATIR: Logoyu sola doğru çeker */
-    margin-left: -130px;
-    
-    transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-    opacity: 0.85;
 }
 
 .nav-menu a {
