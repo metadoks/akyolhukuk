@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://akyolhukuk.com.tr/sitemap.xml
