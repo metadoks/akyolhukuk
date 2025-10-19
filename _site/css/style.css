@@ -103,6 +103,29 @@ p, .contact-item, .page-content {
     position: relative;
 }
 
+.nav-daktilo-logo {
+    position: absolute;
+    height: 60px; /* Menü linkleriyle orantılı bir yükseklik */
+    width: auto;
+    top: 5px;
+    margin: 0 15px; /* Yanlardan boşluk bırak */
+    vertical-align: middle; /* Metinle dikey olarak hizala */
+    opacity: 0.8; /* Biraz şeffaflık ekle */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-daktilo-logo:hover {
+    transform: scale(1.1); /* Üzerine gelince biraz büyüt */
+    opacity: 1; /* Tam opak hale getir */
+}
+
+/* Mobil görünümde daktilo logosunu gizle, çakışma olmaması için */
+@media (max-width: 768px) {
+    .nav-daktilo-logo {
+        display: none;
+    }
+}
+
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -197,7 +220,7 @@ p, .contact-item, .page-content {
 .hero-backgrounds .hero-bg:nth-child(2) {
     background-image: url('/images/hero-bg-2.jpg');
     animation-delay: 6s; /* 2. fotoğraf 6. saniyede başlar */
-    background-position: center top; 
+    background-position: center center; 
 }
 .hero-backgrounds .hero-bg:nth-child(3) {
     background-image: url('/images/hero-bg-3.jpg');
