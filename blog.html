@@ -3,22 +3,23 @@ layout: base.njk
 permalink: /blog/index.html
 metaDescription: "Akyol Hukuk Bürosu Blog: Av. A. Güray Akyol'dan güncel hukuki makaleler. Sigorta, Nakliye, İş ve Ceza Hukuku üzerine uzman görüşleri ve bilgilendirici yazılar."
 ---
-<div class="page-container">
-    <h1 class="page-title">Hukuki Makaleler & Blog</h1>
-    <p class="page-content">Güncel hukuki gelişmeler, sıkça sorulan soruların yanıtları ve uzmanlık alanlarımızla ilgili detaylı bilgilendirmeler.</p>
-<div class="blog-grid">
-    {%- for post in collections.posts -%}
-    <article class="post-card">
-        <a href="{{ post.url }}" class="post-image-link">
-            <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="post-image">
-        </a>
-        <div class="post-content">
-            <div class="post-category">{{ post.data.category }}</div>
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-            <p class="post-excerpt">{{ post.data.excerpt }}</p>
-            <a href="{{ post.url }}" class="read-more-link">Devamını Oku →</a>
-        </div>
-    </article>
-    {%- endfor -%}
-</div>
-</div>
+<section class="page-container">
+    <span class="section-eyebrow">Güncel hukuk analizleri</span>
+    <h1 class="page-title">Hukuki Makaleler &amp; Blog</h1>
+    <p class="page-content">Güncel hukuki gelişmeler, sıkça sorulan sorular ve uzmanlık alanlarımızla ilgili derinlemesine değerlendirmeler. Her makale, uygulamada karşılaştığımız senaryolardan süzülen pratik öneriler içerir.</p>
+    <div class="blog-grid">
+        {%- for post in collections.posts -%}
+        <article class="post-card">
+            <a href="{{ post.url }}" class="post-image-link" aria-hidden="true">
+                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="post-image">
+            </a>
+            <div class="post-content">
+                <div class="post-category">{{ post.data.category }}</div>
+                <h2 class="post-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                <p class="post-excerpt">{{ post.data.excerpt }}</p>
+                <a href="{{ post.url }}" class="read-more-link">Devamını oku →</a>
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</section>

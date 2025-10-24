@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "balance-scale",
+    "title": "Ticaret, Şirketler ve Sigorta Hukuku",
+    "description": "Ticari sözleşmelerin hazırlanması, uluslararası tedarik zinciri anlaşmaları, sigorta poliçesi uyuşmazlıkları ve tahkim süreçlerinde stratejik temsil."
+  },
+  {
+    "icon": "gavel",
+    "title": "Medeni ve Borçlar Hukuku",
+    "description": "Miras planlaması, vasiyetname düzenlemeleri, gayrimenkul sözleşmeleri ve yüksek tutarlı tazminat davalarında kapsamlı danışmanlık."
+  },
+  {
+    "icon": "ship",
+    "title": "Uluslararası Nakliye Hukuku",
+    "description": "CMR, Hamburg ve Varşova Konvansiyonu kapsamındaki sorumluluk analizleri, navlun alacakları ve taşıma hasarlarına ilişkin hızlı çözüm."
+  },
+  {
+    "icon": "landmark",
+    "title": "İdare ve Vergi Hukuku",
+    "description": "İdari işlemlerin iptali, tam yargı davaları, kamu ihaleleri itirazları ve vergi cezalarına ilişkin uzlaşma süreçlerinin yönetimi."
+  },
+  {
+    "icon": "file-signature",
+    "title": "İcra ve İflas Hukuku",
+    "description": "İcra takipleri, konkordato ve yeniden yapılandırma planlarının hazırlanması, teminat yönetimi ve alacakların tahsili."
+  },
+  {
+    "icon": "hands-helping",
+    "title": "Vakıf ve STK Hukuku",
+    "description": "Vakıf mal rejimi yönetimi, yönetim kurulu süreçleri, uyum denetimleri ve münhal vakıflarla ilgili ihtilafların çözümlenmesi."
+  }
+]

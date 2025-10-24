@@ -1,181 +1,147 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="UCenhCbC4YfFOumWHEs61bIROsMMh9vQLjnmJmTn_C0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol</title>
-    <meta name="description" content="{{ metaDescription }}">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    {% set siteName = site.name or 'Akyol Hukuk Bürosu' %}
+    {% set computedTitle = (title ~ ' | ' ~ siteName) if title else (siteName ~ ' | ' ~ site.founder) %}
+    {% set description = metaDescription or site.description %}
+    {% set canonicalPath = page.url | url %}
+    {% set canonicalUrl = (site.url or '') + canonicalPath %}
+    <title>{{ computedTitle }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="theme-color" content="#102422">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ computedTitle }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:image" content="{{ site.url }}/images/hero-bg-1.jpg">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ computedTitle }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ site.url }}/images/hero-bg-1.jpg">
+
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=latin-ext">
-    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=latin-ext">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=latin-ext"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymHY7NpC4lMOBBxjAq2c/5+0aP0xSe3UwDQoq7EjiWxZmf0RduCMJLZemfCcqcg05f85QByOk7RwwN7gBl6Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "{{ site.name }}",
+        "image": "{{ site.url }}/images/hero-bg-1.jpg",
+        "url": "{{ site.url }}",
+        "telephone": "{{ site.phone }}",
+        "email": "mailto:{{ site.email }}",
+        "founder": {
+            "@type": "Person",
+            "name": "{{ site.founder }}"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.address.street }}",
+            "addressLocality": "{{ site.address.district }}",
+            "addressRegion": "{{ site.address.region }}",
+            "addressCountry": "TR",
+            "postalCode": "{{ site.address.postalCode }}"
+        },
+        "areaServed": "İstanbul"
+    }
+    </script>
 </head>
 <body>
+    <script>document.documentElement.classList.replace('no-js','js');</script>
+    <a class="skip-link" href="#main-content">İçeriğe atla</a>
+    <header class="site-header" data-header>
+        <div class="container site-header__inner">
+            <a href="/" class="site-brand" aria-label="{{ site.name }} ana sayfası">
+                <img src="/images/logo.png" alt="{{ site.name }} logosu" class="site-logo" width="160" height="64" loading="lazy">
+                <div class="site-brand__text">
+                    <span class="site-brand__title">{{ site.name }}</span>
+                    <span class="site-brand__subtitle">{{ site.founder }}</span>
+                </div>
+            </a>
+            <button type="button" class="site-header__toggle" aria-controls="primary-navigation" aria-expanded="false" data-nav-toggle>
+                <span class="sr-only">Menüyü aç</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <nav id="primary-navigation" class="site-nav" data-nav aria-label="Ana menü">
+                <ul class="site-nav__list" role="list">
+                    {% for item in navigation %}
+                    <li class="site-nav__item"><a class="site-nav__link" href="{{ item.url }}" data-nav-link>{{ item.label }}</a></li>
+                    {% endfor %}
+                </ul>
+                <a class="btn btn--small btn--ghost site-nav__cta" href="/#iletisim">Randevu Talep Et</a>
+            </nav>
+        </div>
+    </header>
 
-<header class="header">
-    <div class="container">
-        <a href="/" class="logo-container">
-            <img src="/images/logo.png" alt="Akyol Hukuk Bürosu Logosu" class="logo">
-        </a>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        
-        <nav class="nav-menu">
-            <a href="/">Ana Sayfa</a>
-            <a href="/#hakkimizda">Hakkımda</a>
-            <a href="/#hizmetler">Hizmetler</a>
-            {#<a href="/davalar/">Örnek Davalar</a>#}
-            <a href="/blog/">Blog</a>
-            <a href="/#iletisim">İletişim</a>
-            <img src="/images/daktilo.webp" alt="Daktilo Logosu" class="nav-daktilo-logo">
-        </nav>
-    </div>
-</header>
+    <main id="main-content">
+        {{ content | safe }}
+    </main>
 
-<main>
-    {{ content | safe }}
-</main>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div>
+                <p class="site-footer__title">{{ site.name }}</p>
+                <p class="site-footer__subtitle">{{ site.founder }}</p>
+                <p class="site-footer__meta">{{ site.address.street }}, {{ site.address.region }} / {{ site.address.city }}</p>
+            </div>
+            <div class="site-footer__contact">
+                <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+            <p class="site-footer__legal">&copy; {{ global.currentYear }} {{ site.name }}. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
 
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2025 Akyol Hukuk Bürosu | Av. Abdullah Güray Akyol. Tüm Hakları Saklıdır.</p>
-        <p class="disclaimer">Bu sitede yer alan bilgiler yalnızca bilgilendirme amaçlıdır ve avukat-müvekkil ilişkisi oluşturmaz.</p>
-    </div>
-</footer>
+    <button type="button" class="scroll-top-btn" data-scroll-top aria-label="Sayfanın başına dön">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
-
-<a href="#" id="scrollTopBtn" class="scroll-top-btn">
-    <i class="fas fa-arrow-up"></i>
-</a>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>İletişim Formu</h2>
-            <p>Aşağıdaki formu doldurarak hukuki sorununuzu özetleyebilir veya danışmanlık talebinizi iletebilirsiniz.</p>
-            
+    <div class="modal" data-modal hidden>
+        <div class="modal__overlay" data-modal-overlay></div>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <button type="button" class="modal__close" data-modal-close aria-label="İletişim formunu kapat">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 id="contact-modal-title">İletişim Formu</h2>
+            <p class="modal__intro">Aşağıdaki formu doldurarak hukuki ihtiyacınızı özetleyebilir, geri dönüş için tercih ettiğiniz kanalı belirtebilirsiniz.</p>
             <form id="contact-form" action="https://formspree.io/f/xanplqpo" method="POST" class="contact-form">
-                <label for="name">Adınız Soyadınız:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">E-posta Adresiniz:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Telefon Numaranız (İsteğe Bağlı):</label>
-                <input type="tel" id="phone" name="phone">
-                <label for="subject">Konu:</label>
+                <label for="name">Adınız Soyadınız</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+
+                <label for="email">E-posta Adresiniz</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="phone">Telefon Numaranız (İsteğe bağlı)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+
+                <label for="subject">Konu</label>
                 <input type="text" id="subject" name="subject" required>
-                <label for="message">Mesajınız:</label>
+
+                <label for="message">Mesajınız</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
-                <button type="submit" class="form-submit-btn">Formu Gönder</button>
-                <p id="form-status" class="form-status"></p>
+
+                <button type="submit" class="btn btn--primary form-submit-btn">Formu Gönder</button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </div>
 
-    <script>
-/* ================================== */
-/* SİTENİN TÜM JAVASCRIPT KODLARI (CANLI VERSİYON) */
-/* ================================== */
-
-// Tarayıcıya, tüm HTML sayfasının yüklenmesini beklemesini, ondan sonra bu script'i çalıştırmasını söyler.
-// Bu, script'in aradığı HTML elementlerini bulamama sorununu engeller.
-document.addEventListener('DOMContentLoaded', function() {
-
-    // --- 1. MOBİL MENÜ İŞLEVİ ---
-    const menuToggle = document.querySelector('#menu-toggle');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    if (menuToggle && navLinks.length) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 769) {
-                    menuToggle.checked = false;
-                }
-            });
-        });
-    }
-
-    // --- 2. YUKARI ÇIK BUTONU İŞLEVİ ---
-    const scrollTopBtn = document.querySelector("#scrollTopBtn");
-    if (scrollTopBtn) {
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        };
-    }
-
-    // --- 3. İLETİŞİM FORMU (MODAL) AÇMA/KAPATMA İŞLEVİ ---
-    const modal = document.getElementById("contactModal");
-    const openBtn = document.getElementById("openContactFormBtn");
-    const closeBtn = document.querySelector(".close-btn");
-
-    if (modal && openBtn && closeBtn) {
-        openBtn.onclick = function() { modal.style.display = "block"; }
-        closeBtn.onclick = function() { modal.style.display = "none"; }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
-
-    // --- 4. AJAX İLE FORM GÖNDERME İŞLEVİ ---
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    async function handleFormSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const data = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (response.ok) {
-                formStatus.innerHTML = "Mesajınız başarıyla gönderildi!";
-                formStatus.className = 'form-status success';
-                form.reset();
-                setTimeout(() => {
-                    if (modal) modal.style.display = "none";
-                    formStatus.className = 'form-status';
-                    formStatus.innerHTML = '';
-                }, 3000);
-            } else {
-                formStatus.innerHTML = "Bir sorun oluştu. Lütfen tekrar deneyin.";
-                formStatus.className = 'form-status error';
-            }
-        } catch (error) {
-            formStatus.innerHTML = "Bir ağ hatası oluştu. Lütfen tekrar deneyin.";
-            formStatus.className = 'form-status error';
-        }
-    }
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", handleFormSubmit);
-    }
-});
-    </script>
-
+    <script src="/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "description": "Hukuki sorularınız için uzman ekibimizle aynı gün içerisinde temas kuruyoruz. Dilediğiniz iletişim kanalını seçebilirsiniz.",
+  "channels": [
+    {
+      "label": "Adresimiz",
+      "value": "Osmanağa Mah. Söğütlüçeşme Cad. No:64 Kat:7 Daire:145 Kadıköy / İstanbul",
+      "icon": "map-marker-alt"
+    },
+    {
+      "label": "Telefon",
+      "value": "0 (554) 267 48 48",
+      "url": "tel:+905542674848",
+      "icon": "phone-alt"
+    },
+    {
+      "label": "E-posta",
+      "value": "iletisim@akyolhukuk.com.tr",
+      "url": "mailto:iletisim@akyolhukuk.com.tr",
+      "icon": "envelope"
+    },
+    {
+      "label": "Çalışma Saatleri",
+      "value": "Hafta içi 09.00 - 18.00",
+      "icon": "clock"
+    }
+  ]
+}
