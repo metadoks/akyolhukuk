@@ -3,18 +3,23 @@ layout: base.njk
 metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Medeni Borçlar (Miras, Vasiyetname, Vesayet dahil), İdare ve Vakıf Hukuku alanlarında uzmanız. Çözüm odaklı danışmanlık."
 ---
 <section id="hero" class="hero">
-    <div class="hero__media" aria-hidden="true">
-        <picture>
-            <source srcset="/images/hero-bg-1.jpg" media="(min-width: 1200px)">
-            <img src="/images/hero-bg-2.jpg" alt="İstanbul manzarasında modern hukuk ofisi" loading="eager">
-        </picture>
+    <div class="hero__backgrounds" aria-hidden="true">
+        <div class="hero__slide" style="--index: 0; --image: url('/images/hero-bg-1.jpg');"></div>
+        <div class="hero__slide" style="--index: 1; --image: url('/images/hero-bg-2.jpg');"></div>
+        <div class="hero__slide" style="--index: 2; --image: url('/images/hero-bg-3.jpg');"></div>
+        <div class="hero__slide" style="--index: 3; --image: url('/images/hero-bg-4.jpg');"></div>
+        <div class="hero__texture"></div>
     </div>
     <div class="container hero__content">
+        <div class="hero__badge">
+            <img src="/images/typewriter-mark.svg" alt="" aria-hidden="true">
+            <span>Mekanik daktilo titizliğinde kayıt ve arşiv</span>
+        </div>
         <span class="section-eyebrow">Kadıköy &amp; İstanbul Merkezli</span>
-        <h1 class="hero__title">Stratejik hukuki çözümlerle işinizi güvenceye alın</h1>
-        <p class="hero__subtitle">Ticaret, nakliye, sigorta ve kamu hukuku alanlarında 30 yılı aşkın deneyimle, riskleri önceden yönetip süreçleri şeffaf biçimde raporluyoruz.</p>
+        <h1 class="hero__title">Çok yönlü hukuki çözümlerle haklarınızı koruyun</h1>
+        <p class="hero__subtitle">Ticaret, nakliye, sigorta, vakıf ve idare hukuku alanlarındaki deneyimimizi tek bünyede toplayarak her dosyada aynı özeni gösteriyoruz.</p>
         <div class="hero__cta">
-            <a href="#iletisim" class="btn btn--primary">Danışmanlık Alın</a>
+            <a href="#iletisim" class="btn btn--primary">Hemen İletişime Geçin</a>
             <a href="/davalar/" class="btn btn--ghost">Başarı Dosyalarını İnceleyin</a>
         </div>
         <dl class="hero-stats">
@@ -29,35 +34,26 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
 </section>
 
 <section id="hakkimizda" class="section about">
-    <div class="container about__grid">
+    <div class="container about__grid about__grid--biography">
         <figure class="about__portrait">
             <picture>
                 <source srcset="/images/avukat_foto.webp" type="image/webp">
                 <img src="/images/avukat_foto.png" alt="Avukat Abdullah Güray Akyol" loading="lazy">
             </picture>
+            <a href="/davalar/" class="btn btn--ghost about__case-link">Emsal Kararları İnceleyin</a>
         </figure>
         <div class="about__content">
             <span class="section-eyebrow">Kurucu Avukat</span>
             <h2>Av. Abdullah Güray Akyol</h2>
-            <p class="lead">1993 yılından bu yana, ulusal ve uluslararası müvekkiller için karmaşık hukuki süreçleri yönetiyor; ticari uyuşmazlıklarda proaktif stratejilerle hak arama mücadelesini üstleniyoruz.</p>
-            <div class="about__cards">
-                <article class="about-card">
-                    <h3>Uzman raporlama</h3>
-                    <p>Dosya bazında haftalık durum raporları, risk matrisi ve olası senaryolarla desteklenen aksiyon planları.</p>
-                </article>
-                <article class="about-card">
-                    <h3>Çok disiplinli ekip</h3>
-                    <p>Lojistik, enerji, inşaat ve teknoloji sektörlerinden danışmanlarla birlikte çalışarak mevzuatın ötesine geçen çözümler üretiyoruz.</p>
-                </article>
+            <p class="about__intro">30 yılı aşkın mesleki tecrübe ile, her hukuki sürece özen ve dürüstlükle yaklaşıyor, en uygun çözümü birlikte arıyoruz.</p>
+            <div class="about__divider" role="presentation"></div>
+            <div class="about__body">
+                <p>1992 yılında Ankara Üniversitesi Hukuk Fakültesi'nden mezun olduktan sonra, avukatlık kariyerime 1993 yılında Ankara Barosu'na bağlı olarak başladım. 2003 yılından bu yana ise mesleki faaliyetlerime İstanbul Barosu'na kayıtlı serbest avukat olarak devam etmekteyim.</p>
+                <p>Kariyerim boyunca, özellikle Uluslararası Nakliye, Ticaret ve Sigorta Hukuku gibi teknik alanlarda uzmanlaşarak, müvekkillerimi başarıyla temsil ettim. Elde ettiğimiz emsal niteliğindeki mahkeme kararları, hukuki süreçlerdeki titiz ve ısrarlı yaklaşımımızın bir göstergesidir.</p>
             </div>
-            <ul class="about__values">
-                <li><span>Şeffaf iletişim ve ölçülebilir hedefler</span></li>
-                <li><span>Tahkim ve dava stratejilerinde erken aksiyon</span></li>
-                <li><span>Uluslararası sözleşme yönetiminde çift dilli destek</span></li>
-            </ul>
-            <div class="about__actions">
-                <a href="/davalar/" class="btn btn--ghost">Emsal Kararlarımız</a>
-                <a href="#iletisim" class="btn btn--link">Doğrudan iletişime geçin</a>
+            <div class="about__heritage">
+                <img src="/images/typewriter-mark.svg" alt="" aria-hidden="true">
+                <span>Fiziksel dosya arşivlerimizde daktilo metinleri hâlâ korunur.</span>
             </div>
             <p class="about__signature">Abdullah Güray Akyol</p>
         </div>
@@ -118,7 +114,7 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
             <ul class="check-list">
                 <li>Uyum denetimleri ve politika dokümantasyonu</li>
                 <li>Sözleşme yaşam döngüsü ve müzakere desteği</li>
-                <li>Çok dilli sözleşme inceleme ekipleri</li>
+                <li>Çok dilli sözleşme inceleme desteği</li>
             </ul>
         </div>
         <div class="split-card">

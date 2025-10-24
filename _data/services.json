@@ -1,32 +1,32 @@
 [
   {
-    "icon": "balance-scale",
+    "icon": "briefcase",
     "title": "Ticaret, Şirketler ve Sigorta Hukuku",
-    "description": "Ticari sözleşmelerin hazırlanması, uluslararası tedarik zinciri anlaşmaları, sigorta poliçesi uyuşmazlıkları ve tahkim süreçlerinde stratejik temsil."
+    "description": "Ticari sözleşmeler, şirket işlemleri, sigorta uyuşmazlıkları, faktoring, alacak takipleri ve uluslararası ticari borçların tahsili."
+  },
+  {
+    "icon": "balance-scale",
+    "title": "Medeni ve Borçlar Hukuku",
+    "description": "Haksız fiil, miras hukuku, vasiyetname işlemleri, vesayet, gayrimenkul ve tazminat hukuku gibi medeni hukuk ve borçlar hukuku kapsamındaki uyuşmazlıkların çözümü."
   },
   {
     "icon": "gavel",
-    "title": "Medeni ve Borçlar Hukuku",
-    "description": "Miras planlaması, vasiyetname düzenlemeleri, gayrimenkul sözleşmeleri ve yüksek tutarlı tazminat davalarında kapsamlı danışmanlık."
+    "title": "İdare Hukuku",
+    "description": "İdarenin eylem ve işlemlerine karşı açılacak tam yargı ve iptal davaları gibi idari uyuşmazlıkların çözümü."
   },
   {
     "icon": "ship",
     "title": "Uluslararası Nakliye Hukuku",
-    "description": "CMR, Hamburg ve Varşova Konvansiyonu kapsamındaki sorumluluk analizleri, navlun alacakları ve taşıma hasarlarına ilişkin hızlı çözüm."
+    "description": "Kara, deniz ve hava taşımacılığından kaynaklanan uyuşmazlıklar, navlun alacakları ve CMR Konvansiyonu uygulamaları."
+  },
+  {
+    "icon": "file-invoice-dollar",
+    "title": "İcra ve İflas Hukuku",
+    "description": "Her türlü alacağın icra yoluyla takibi, iflas süreçlerinin yönetimi ve borçların yeniden yapılandırılması hizmetleri."
   },
   {
     "icon": "landmark",
-    "title": "İdare ve Vergi Hukuku",
-    "description": "İdari işlemlerin iptali, tam yargı davaları, kamu ihaleleri itirazları ve vergi cezalarına ilişkin uzlaşma süreçlerinin yönetimi."
-  },
-  {
-    "icon": "file-signature",
-    "title": "İcra ve İflas Hukuku",
-    "description": "İcra takipleri, konkordato ve yeniden yapılandırma planlarının hazırlanması, teminat yönetimi ve alacakların tahsili."
-  },
-  {
-    "icon": "hands-helping",
-    "title": "Vakıf ve STK Hukuku",
-    "description": "Vakıf mal rejimi yönetimi, yönetim kurulu süreçleri, uyum denetimleri ve münhal vakıflarla ilgili ihtilafların çözümlenmesi."
+    "title": "Vakıf Hukuku",
+    "description": "Vakıf malları üzerindeki hukuki süreçler, tapu terkinleri ve özellikle münhal vakıflar konusundaki uyuşmazlıklar."
   }
 ]

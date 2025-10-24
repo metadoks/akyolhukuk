@@ -334,6 +334,7 @@ ul {
     margin-left: 1.5rem;
 }
 
+
 .hero {
     position: relative;
     min-height: clamp(520px, 82vh, 680px);
@@ -343,25 +344,56 @@ ul {
     overflow: hidden;
 }
 
-.hero__media {
+.hero__backgrounds {
     position: absolute;
     inset: 0;
     z-index: -2;
+    pointer-events: none;
 }
 
-.hero__media picture,
-.hero__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero__media::after {
-    content: "";
+.hero__slide {
     position: absolute;
     inset: 0;
-    background: linear-gradient(115deg, rgba(15, 29, 26, 0.82), rgba(16, 36, 34, 0.55) 55%, rgba(16, 36, 34, 0.25));
-    z-index: 1;
+    background-image: var(--image);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroSlide 28s infinite;
+    animation-delay: calc(var(--index) * 7s);
+}
+
+.hero__texture {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(15, 29, 26, 0.88), rgba(16, 36, 34, 0.58) 60%, rgba(16, 36, 34, 0.32));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+@keyframes heroSlide {
+    0%,
+    8% {
+        opacity: 0;
+    }
+    12%,
+    32% {
+        opacity: 1;
+    }
+    36%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__slide {
+        animation: none;
+        opacity: 1;
+    }
+
+    .hero__slide:not(:first-child) {
+        display: none;
+    }
 }
 
 .hero__content {
@@ -372,6 +404,23 @@ ul {
     flex-direction: column;
     gap: 1.5rem;
     color: rgba(255, 255, 255, 0.92);
+}
+
+.hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.85rem;
+    background: rgba(216, 209, 195, 0.16);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.hero__badge img {
+    width: 1.75rem;
+    height: 1.75rem;
 }
 
 .hero__title {
@@ -425,84 +474,93 @@ ul {
     align-items: center;
 }
 
+.about__grid--biography {
+    align-items: start;
+}
+
 .about__portrait {
     position: relative;
-    padding: 1.5rem;
-    background: linear-gradient(160deg, rgba(31, 91, 77, 0.15), rgba(255, 255, 255, 0.7));
+    padding: 1.75rem;
+    background: linear-gradient(160deg, rgba(216, 209, 195, 0.65), rgba(255, 255, 255, 0.92));
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card);
     overflow: hidden;
 }
 
+.about__portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/typewriter-mark.svg');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: 110% -20%;
+    opacity: 0.25;
+}
+
 .about__portrait::after {
     content: "";
     position: absolute;
-    inset: 12px;
-    border-radius: calc(var(--radius-lg) - 12px);
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    inset: 14px;
+    border-radius: calc(var(--radius-lg) - 14px);
+    border: 1px solid rgba(31, 91, 77, 0.18);
     pointer-events: none;
 }
 
-.about__content .lead {
-    margin-bottom: 2rem;
+.about__portrait picture,
+.about__portrait img {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: calc(var(--radius-lg) - 20px);
+    box-shadow: 0 16px 40px -28px rgba(17, 24, 39, 0.55);
 }
 
-.about__cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.about-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(15, 29, 26, 0.08);
-    box-shadow: 0 12px 35px -25px rgba(17, 24, 39, 0.4);
-}
-
-.about-card h3 {
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    color: var(--color-primary-700);
-}
-
-.about__values {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.about__values li {
-    display: flex;
+.about__case-link {
+    margin-top: 1.5rem;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
+    gap: 0.5rem;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.about__intro {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+.about__divider {
+    width: 80px;
+    height: 2px;
+    background: var(--color-primary-500);
+}
+
+.about__body {
+    display: grid;
+    gap: 1.25rem;
     color: var(--color-text);
 }
 
-.about__values span::before {
-    content: "\2713";
+.about__heritage {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 50%;
-    background: rgba(31, 91, 77, 0.12);
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(216, 209, 195, 0.35);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
     color: var(--color-primary-700);
-    margin-right: 0.5rem;
-    font-size: 0.9rem;
+    border: 1px solid rgba(31, 91, 77, 0.18);
 }
 
-.about__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.about__heritage img {
+    width: 1.65rem;
+    height: 1.65rem;
 }
 
 .about__signature {
@@ -516,6 +574,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
+    align-items: stretch;
 }
 
 .service-card {
@@ -525,6 +584,9 @@ ul {
     border: 1px solid rgba(17, 24, 39, 0.08);
     box-shadow: 0 18px 40px -32px rgba(15, 29, 26, 0.55);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .service-card:hover,
@@ -548,6 +610,7 @@ ul {
 
 .service-card p {
     color: var(--color-text-muted);
+    margin-top: auto;
 }
 
 .process-grid {
@@ -1104,6 +1167,11 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .about__portrait {
+        max-width: 420px;
+        margin-inline: auto;
+    }
+
     .site-footer__inner {
         grid-template-columns: 1fr;
     }
@@ -1119,12 +1187,12 @@ ul {
         align-items: stretch;
     }
 
-    .about__cards {
+    .service-grid {
         grid-template-columns: 1fr;
     }
 
-    .service-grid {
-        grid-template-columns: 1fr;
+    .about__portrait {
+        padding: 1.25rem;
     }
 
     .process-grid {
