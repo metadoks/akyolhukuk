@@ -84,7 +84,7 @@
                     <li class="site-nav__item"><a class="site-nav__link" href="{{ item.url }}" data-nav-link>{{ item.label }}</a></li>
                     {% endfor %}
                 </ul>
-                <a class="btn btn--small btn--ghost site-nav__cta" href="/#iletisim">Hemen İletişim</a>
+                <a class="btn btn--small btn--ghost site-nav__cta" href="tel:{{ site.phone }}">Hemen Ulaşın</a>
             </nav>
         </div>
     </header>
@@ -95,16 +95,47 @@
 
     <footer class="site-footer">
         <div class="container site-footer__inner">
-            <div>
-                <p class="site-footer__title">{{ site.name }}</p>
-                <p class="site-footer__subtitle">{{ site.founder }}</p>
-                <p class="site-footer__meta">{{ site.address.street }}, {{ site.address.region }} / {{ site.address.city }}</p>
+            <div class="site-footer__upper">
+                <div class="site-footer__brand">
+                    <div class="site-footer__emblem" aria-hidden="true">
+                        <img src="/images/typewriter-mark.svg" alt="">
+                    </div>
+                    <div>
+                        <p class="site-footer__title">{{ site.name }}</p>
+                        <p class="site-footer__subtitle">{{ site.founder }}</p>
+                        <p class="site-footer__description">{{ site.description }}</p>
+                    </div>
+                </div>
+                <div class="site-footer__columns">
+                    <div class="site-footer__column">
+                        <p class="site-footer__heading">Hızlı Erişim</p>
+                        <ul class="site-footer__nav" role="list">
+                            {% for item in navigation %}
+                            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="site-footer__column">
+                        <p class="site-footer__heading">İletişim</p>
+                        <ul class="site-footer__nav" role="list">
+                            {% for channel in contact.channels %}
+                            <li>
+                                <span class="site-footer__label">{{ channel.label }}:</span>
+                                {% if channel.url %}
+                                <a href="{{ channel.url }}">{{ channel.value }}</a>
+                                {% else %}
+                                <span>{{ channel.value }}</span>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="site-footer__contact">
-                <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
-                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            <div class="site-footer__lower">
+                <p class="site-footer__meta">{{ site.address.street }}, {{ site.address.region }} / {{ site.address.city }} • Tel: <a href="tel:{{ site.phone }}">{{ site.phone }}</a> • <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                <p class="site-footer__legal">&copy; {{ global.currentYear }} {{ site.name }}. Tüm hakları saklıdır.</p>
             </div>
-            <p class="site-footer__legal">&copy; {{ global.currentYear }} {{ site.name }}. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
