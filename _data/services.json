@@ -1,31 +1,31 @@
 [
   {
-    "icon": "briefcase",
+    "icon": "trade-ledger",
     "title": "Ticaret, Şirketler ve Sigorta Hukuku",
     "description": "Ticari sözleşmeler, şirket işlemleri, sigorta uyuşmazlıkları, faktoring, alacak takipleri ve uluslararası ticari borçların tahsili."
   },
   {
-    "icon": "balance-scale",
+    "icon": "civil-balance",
     "title": "Medeni ve Borçlar Hukuku",
     "description": "Haksız fiil, miras hukuku, vasiyetname işlemleri, vesayet, gayrimenkul ve tazminat hukuku gibi medeni hukuk ve borçlar hukuku kapsamındaki uyuşmazlıkların çözümü."
   },
   {
-    "icon": "gavel",
+    "icon": "administrative-compass",
     "title": "İdare Hukuku",
     "description": "İdarenin eylem ve işlemlerine karşı açılacak tam yargı ve iptal davaları gibi idari uyuşmazlıkların çözümü."
   },
   {
-    "icon": "ship",
+    "icon": "transport-ship",
     "title": "Uluslararası Nakliye Hukuku",
     "description": "Kara, deniz ve hava taşımacılığından kaynaklanan uyuşmazlıklar, navlun alacakları ve CMR Konvansiyonu uygulamaları."
   },
   {
-    "icon": "file-invoice-dollar",
+    "icon": "enforcement-hammer",
     "title": "İcra ve İflas Hukuku",
     "description": "Her türlü alacağın icra yoluyla takibi, iflas süreçlerinin yönetimi ve borçların yeniden yapılandırılması hizmetleri."
   },
   {
-    "icon": "landmark",
+    "icon": "foundation-ledger",
     "title": "Vakıf Hukuku",
     "description": "Vakıf malları üzerindeki hukuki süreçler, tapu terkinleri ve özellikle münhal vakıflar konusundaki uyuşmazlıklar."
   }
