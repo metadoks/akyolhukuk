@@ -3,7 +3,31 @@ layout: base.njk
 permalink: /davalar/index.html
 metaDescription: "Akyol Hukuk Bürosu'nun emsal niteliğindeki dava başarılarını inceleyin. Ticaret, Sigorta ve Nakliye Hukuku alanlarında elde ettiğimiz sonuçları ve stratejileri görün."
 ---
-<div class="page-container">
+<section class="page-container">
+    <span class="section-eyebrow">Emsal karar özetleri</span>
     <h1 class="page-title">Örnek Davalar</h1>
-    <p class="page-content">Bu bölüm yakında güncellenecektir. Emsal teşkil eden dava özetleri ve başarı hikayelerimiz burada yer alacaktır.</p>
-</div>
+    <p class="page-content">Müvekkil mahremiyetini koruyarak paylaştığımız aşağıdaki örnekler; stratejik yaklaşımımızı, farklı hukuk disiplinleriyle çalışma biçimimizi ve sonuç odaklılığımızı gösterir.</p>
+    <div class="case-grid">
+        {% for item in cases %}
+        <article class="case-card">
+            <header class="case-card__header">
+                <span class="case-card__year">{{ item.year }}</span>
+                <span class="case-card__area">{{ item.area }}</span>
+            </header>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.summary }}</p>
+            <div class="case-card__result">
+                <strong>Sonuç:</strong> {{ item.result }}
+            </div>
+            <ul class="case-card__tags" role="list">
+                {% for tag in item.tags %}
+                <li>{{ tag }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="section-cta">
+        <button class="btn btn--primary" data-open-modal>Dosyanızı değerlendirelim</button>
+    </div>
+</section>

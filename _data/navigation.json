@@ -1,0 +1,8 @@
+[
+  { "label": "Ana Sayfa", "url": "/" },
+  { "label": "Hakkımızda", "url": "/#hakkimizda" },
+  { "label": "Hizmetler", "url": "/#hizmetler" },
+  { "label": "Örnek Davalar", "url": "/davalar/" },
+  { "label": "Blog", "url": "/blog/" },
+  { "label": "İletişim", "url": "/#iletisim" }
+]

@@ -3,96 +3,176 @@ layout: base.njk
 metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Medeni Borçlar (Miras, Vasiyetname, Vesayet dahil), İdare ve Vakıf Hukuku alanlarında uzmanız. Çözüm odaklı danışmanlık."
 ---
 <section id="hero" class="hero">
-    <div class="hero-backgrounds">
-        <div class="hero-bg"></div>
-        <div class="hero-bg"></div>
-        <div class="hero-bg"></div>
-        <div class="hero-bg"></div>
+    <div class="hero__backgrounds" aria-hidden="true">
+        <div class="hero__slide" style="--index: 0; --image: url('/images/hero-bg-1.jpg');"></div>
+        <div class="hero__slide" style="--index: 1; --image: url('/images/hero-bg-2.jpg');"></div>
+        <div class="hero__slide" style="--index: 2; --image: url('/images/hero-bg-3.jpg');"></div>
+        <div class="hero__slide" style="--index: 3; --image: url('/images/hero-bg-4.jpg');"></div>
+        <div class="hero__texture"></div>
     </div>
-    <div class="container">
-        <h1 class="hero-title">Akyol Hukuk Bürosu</h1>
-        <p class="hero-subtitle">Ticaret, Nakliye ve Medeni Borçlar Hukuku başta olmak üzere, uzmanlık gerektiren süreçlerde çözüm odaklı avukatlık hizmetleri.</p>
-        <a href="#iletisim" class="cta-button">İletişime Geçin</a>
+    <div class="container hero__content">
+        <div class="hero__badge" aria-hidden="true">
+            <img src="/images/typewriter-mark.svg" alt="">
+        </div>
+        <span class="section-eyebrow">Kadıköy &amp; İstanbul Merkezli</span>
+        <h1 class="hero__title">Çok yönlü hukuki çözümlerle haklarınızı koruyun</h1>
+        <p class="hero__subtitle">Ticaret, nakliye, sigorta, vakıf ve idare hukuku alanlarındaki deneyimimizi tek bünyede toplayarak her dosyada aynı özeni gösteriyoruz.</p>
+        <div class="hero__cta">
+            <a href="tel:{{ site.phone }}" class="btn btn--primary">Hemen Arayın</a>
+            <a href="/davalar/" class="btn btn--ghost">Başarı Dosyalarını İnceleyin</a>
+        </div>
+        <dl class="hero-stats">
+            {% for item in highlights %}
+            <div class="hero-stats__item">
+                <dt>{{ item.value }}</dt>
+                <dd>{{ item.label }}</dd>
+            </div>
+            {% endfor %}
+        </dl>
     </div>
 </section>
 
-<section id="hakkimizda" class="content-section about-section">
-    <div class="container about-container">
-        <div class="about-left-column">
-            <div class="about-image">
-                <picture>
-                    <source srcset="/images/avukat_foto.webp" type="image/webp">
-                    <source srcset="/images/avukat_foto.png" type="image/png">
-                    <img src="/images/avukat_foto.png" alt="Avukat Abdullah Güray Akyol">
-                </picture>
-            </div>
-            <a href="/davalar/" class="cta-secondary">Emsal Kararları İnceleyin</a>
-        </div>
-        
-        <div class="about-text">
+<section id="hakkimizda" class="section about">
+    <div class="container about__grid about__grid--biography">
+        <figure class="about__portrait">
+            <picture>
+                <source srcset="/images/avukat_foto.webp" type="image/webp">
+                <img src="/images/avukat_foto.png" alt="Avukat Abdullah Güray Akyol" loading="lazy">
+            </picture>
+            <a href="/davalar/" class="btn btn--ghost about__case-link">Örnek Davaları İnceleyin</a>
+        </figure>
+        <div class="about__content">
+            <span class="section-eyebrow">Kurucu Avukat</span>
             <h2>Av. Abdullah Güray Akyol</h2>
-            <p class="about-intro">
-                30 yılı aşkın mesleki tecrübe ile, her hukuki sürece özen ve dürüstlükle yaklaşıyor, en uygun çözümü birlikte arıyoruz.
-            </p>
-            <hr class="divider">
-            <div class="about-body">
+            <p class="about__intro">30 yılı aşkın mesleki tecrübe ile, her hukuki sürece özen ve dürüstlükle yaklaşıyor, en uygun çözümü birlikte arıyoruz.</p>
+            <div class="about__divider" role="presentation"></div>
+            <div class="about__body">
                 <p>1992 yılında Ankara Üniversitesi Hukuk Fakültesi'nden mezun olduktan sonra, avukatlık kariyerime 1993 yılında Ankara Barosu'na bağlı olarak başladım. 2003 yılından bu yana ise mesleki faaliyetlerime İstanbul Barosu'na kayıtlı serbest avukat olarak devam etmekteyim.</p>
-                <p>Kariyerim boyunca, özellikle Uluslararası Nakliye, Ticaret ve Sigorta Hukuku gibi teknik alanlarda uzmanlaşarak, müvekkillerimi başarıyla temsil ettim. Elde ettiğimiz emsal niteliğindeki mahkeme kararları, hukuki süreçlerdeki titiz ve ısrarlı yaklaşımımızın bir göstergesidir.</p>
+                <p>Kariyerim boyunca, özellikle Uluslararası Nakliye, Ticaret ve Sigorta Hukuku gibi teknik alanlarda uzmanlaşarak, müvekkillerimi başarıyla temsil ettim. Elde ettiğimiz <a href="/davalar/">emsal niteliğindeki mahkeme kararları</a>, hukuki süreçlerdeki titiz ve ısrarlı yaklaşımımızın bir göstergesidir.</p>
             </div>
-            <p class="about-signature">
-                Abdullah Güray Akyol
-            </p>
+            <div class="about__heritage" aria-hidden="true">
+                <img src="/images/typewriter-mark.svg" alt="">
+            </div>
+            <p class="about__signature">Abdullah Güray Akyol</p>
         </div>
     </div>
 </section>
 
-<section id="hizmetler" class="content-section-dark">
+<section id="hizmetler" class="section section--tinted services">
     <div class="container">
-        <h2 class="section-title">Temel Faaliyet Alanlarımız</h2>
-        <div class="hizmetler-grid">
-            <div class="hizmet-karti">
-                <i class="fas fa-briefcase hizmet-icon"></i>
-                <h3>Ticaret, Şirketler ve Sigorta Hukuku</h3>
-                <p>Ticari sözleşmeler, şirket işlemleri, sigorta uyuşmazlıkları, faktoring, alacak takipleri ve uluslararası ticari borçların tahsili.</p>
-            </div>
-            <div class="hizmet-karti">
-                <i class="fas fa-balance-scale hizmet-icon"></i>
-                <h3>Medeni ve Borçlar Hukuku</h3>
-                <p>Haksız fiil, miras hukuku, vasiyetname işlemleri, vesayet, gayrimenkul ve tazminat hukuku gibi medeni hukuk ve borçlar hukuku kapsamındaki uyuşmazlıkların çözümü.</p>
-            </div>
-            <div class="hizmet-karti">
-                <i class="fas fa-gavel hizmet-icon"></i>
-                <h3>İdare Hukuku</h3>
-                <p>İdarenin eylem ve işlemlerine karşı açılacak tam yargı ve iptal davaları gibi idari uyuşmazlıkların çözümü.</p>
-            </div>
-            <div class="hizmet-karti">
-                <i class="fas fa-ship hizmet-icon"></i>
-                <h3>Uluslararası Nakliye Hukuku</h3>
-                <p>Kara, deniz ve hava taşımacılığından kaynaklanan uyuşmazlıklar, navlun alacakları ve CMR Konvansiyonu uygulamaları.</p>
-            </div>
-            <div class="hizmet-karti">
-                <i class="fas fa-file-invoice-dollar hizmet-icon"></i>
-                <h3>İcra ve İflas Hukuku</h3>
-                <p>Her türlü alacağın icra yoluyla takibi, iflas süreçlerinin yönetimi ve borçların yeniden yapılandırılması hizmetleri.</p>
-            </div>
-            <div class="hizmet-karti">
-                <i class="fas fa-landmark hizmet-icon"></i>
-                <h3>Vakıf Hukuku</h3>
-                <p>Vakıf malları üzerindeki hukuki süreçler, tapu terkinleri ve özellikle münhal vakıflar konusundaki uyuşmazlıklar.</p>
-            </div>
+        <div class="section-heading">
+            <span class="section-eyebrow">Uzmanlık Alanlarımız</span>
+            <h2>Temel faaliyet alanlarımız</h2>
+            <p>Faaliyet gösterdiğiniz sektörün ihtiyaçlarına göre özelleştirilmiş danışmanlık ve dava stratejileri geliştiriyoruz.</p>
         </div>
+        <div class="service-grid">
+            {% for service in services %}
+            <article class="service-card">
+                <div class="service-card__icon" aria-hidden="true">
+                    <img src="/images/icons/{{ service.icon }}.svg" alt="">
+                </div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </article>
+            {% endfor %}
         </div>
+    </div>
 </section>
 
-<section id="iletisim" class="content-section">
-    <div class="container contact-container">
-        <h2 class="section-title">Bizimle İletişime Geçin</h2>
-        <p class="contact-description">Hukuki bir sorunuz mu var? Bir danışmanlık randevusu ayarlamak veya detaylı bilgi almak için bizimle iletişime geçmekten çekinmeyin.</p>
-        <div class="contact-grid">
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><h3>Adresimiz</h3><p>Osmanağa Mh. Söğütlüçeşme Cad. No:64 K:7 D:145 Kadıköy-İstanbul</p></div>
-            <div class="contact-item"><i class="fas fa-phone-alt"></i><h3>Bizi Arayın</h3><p><a href="tel:+905542674848">0 (554) 267 48 48</a></p></div>
-            <div class="contact-item"><i class="fas fa-envelope"></i><h3>E-posta Gönderin</h3><p><a href="mailto:iletisim@akyolhukuk.com.tr">iletisim@akyolhukuk.com.tr</a></p></div>
+<section class="section process">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-eyebrow">Çalışma Metodumuz</span>
+            <h2>Hızlı ve ölçülebilir adımlarla ilerliyoruz</h2>
+            <p>Her yeni dosyada aynı metodolojiyi izleyerek riskleri kontrol altında tutuyor ve paydaşlarınızla uyumlu bir yol haritası oluşturuyoruz.</p>
         </div>
-        <button id="openContactFormBtn" class="cta-button contact-cta-button">Bize Ulaşın</button>
+        <div class="process-grid">
+            <article class="process-card">
+                <h3>1. Analiz &amp; Yol Haritası</h3>
+                <p>Sözleşmeler, yazışmalar ve deliller 48 saat içinde analiz edilir; olası senaryolar ve öncelikli aksiyon planı paylaşılır.</p>
+            </article>
+            <article class="process-card">
+                <h3>2. Stratejik Uygulama</h3>
+                <p>Tahkim, dava veya arabuluculuk seçenekleri karşılaştırılır; en uygun yol için takvim ve bütçe paylaşılır.</p>
+            </article>
+            <article class="process-card">
+                <h3>3. Sürekli Güncelleme</h3>
+                <p>Duruşma notları, bilirkişi süreçleri ve kritik tarihler düzenli olarak teyit edilir; gerekli hamleler aynı gün içinde netleştirilir.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section--soft section--split">
+    <div class="container split-grid">
+        <div>
+            <span class="section-eyebrow">Kurumsal Güvence</span>
+            <h2>Uygunluk ve risk yönetimi desteği</h2>
+            <p>Lisans sözleşmelerinden KVKK süreçlerine kadar tüm yasal gereklilikleri tek merkezden yönetiyor, denetimler öncesinde hazırlık programı oluşturuyoruz.</p>
+            <ul class="check-list">
+                <li>Uyum denetimleri ve politika dokümantasyonu</li>
+                <li>Sözleşme yaşam döngüsü ve müzakere desteği</li>
+                <li>Sektöre özel çözüm planları ve doküman desteği</li>
+            </ul>
+        </div>
+        <div class="split-card">
+            <h3>Denetim öncesi hazırlık paketi</h3>
+            <p>İç kontrol listeleri, kanıt dosyası ve yönetim sunumu ile denetçilerinize hazır olun.</p>
+            <a href="#iletisim" class="btn btn--primary btn--block">Uzman desteği için hemen iletişime geçin</a>
+        </div>
+    </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="latest-posts">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-eyebrow">Güncel Bilgiler</span>
+            <h2 id="latest-posts">Blogdan öne çıkanlar</h2>
+            <p>Yeni mevzuat değişiklikleri ve emsal karar analizleriyle güncel kalın.</p>
+        </div>
+        <div class="blog-teasers">
+            {% for post in collections.posts | slice(0, 3) %}
+            <article class="blog-teaser">
+                <a href="{{ post.url }}" class="blog-teaser__image" aria-hidden="true">
+                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}">
+                </a>
+                <div class="blog-teaser__content">
+                    <p class="blog-teaser__meta">{{ post.data.category }} • {{ post.date | postDate }}</p>
+                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                    <p>{{ post.data.excerpt }}</p>
+                    <a href="{{ post.url }}" class="btn btn--link">Devamını oku</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="section-cta">
+            <a class="btn btn--ghost" href="/blog/">Tüm makaleleri görüntüleyin</a>
+        </div>
+    </div>
+</section>
+
+<section id="iletisim" class="section contact">
+    <div class="container contact__grid">
+        <div class="contact__intro">
+            <span class="section-eyebrow">İlk görüşme ücretsiz</span>
+            <h2>Doğru strateji için hızlı geri dönüş</h2>
+            <p>{{ contact.description }}</p>
+            <button class="btn btn--primary" data-open-modal>İletişim Formunu Aç</button>
+        </div>
+        <div class="contact__cards">
+            {% for channel in contact.channels %}
+            <article class="contact-card">
+                <div class="contact-card__icon" aria-hidden="true">
+                    <img src="/images/icons/contact-{{ channel.icon }}.svg" alt="" loading="lazy">
+                </div>
+                <h3>{{ channel.label }}</h3>
+                {% if channel.url %}
+                <p><a href="{{ channel.url }}">{{ channel.value }}</a></p>
+                {% else %}
+                <p>{{ channel.value }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
     </div>
 </section>

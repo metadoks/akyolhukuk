@@ -1,0 +1,16 @@
+{
+  "name": "Akyol Hukuk Bürosu",
+  "founder": "Av. Abdullah Güray Akyol",
+  "url": "https://www.akyolhukuk.com.tr",
+  "description": "Kadıköy'de ticaret, nakliye, medeni borçlar, idare ve vakıf hukuku alanlarında uzmanlaşmış hukuk bürosu.",
+  "email": "iletisim@akyolhukuk.com.tr",
+  "phone": "+905542674848",
+  "address": {
+    "street": "Söğütlüçeşme Cad. No:64 Kat:7 Daire:145",
+    "district": "Osmanağa Mahallesi",
+    "city": "İstanbul",
+    "region": "Kadıköy",
+    "postalCode": "34714",
+    "country": "TR"
+  }
+}

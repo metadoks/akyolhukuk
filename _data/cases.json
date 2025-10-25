@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Navlun Alacağı Tahsili",
+    "year": 2024,
+    "area": "Uluslararası Nakliye",
+    "summary": "CMR Konvansiyonu kapsamındaki taşıma sözleşmesinde, taşıyıcının sorumluluk itirazına rağmen %100 tahsilat sağlandı.",
+    "result": "1,2 milyon € tutarında navlun bedeli faizleriyle birlikte tahsil edildi.",
+    "tags": ["CMR", "Tahkim", "Nakliye"]
+  },
+  {
+    "title": "Sigorta Poliçesi Teminat Dışı İtirazının Bertarafı",
+    "year": 2023,
+    "area": "Sigorta Hukuku",
+    "summary": "Yüksek tutarlı fabrika hasarında sigorta şirketinin teminat dışı iddiası bilirkişi incelemesiyle çürütüldü.",
+    "result": "21 milyon TL'lik hasar bedeli sulh ile 60 gün içinde müvekkile ödendi.",
+    "tags": ["Sigorta", "Bilirkişi", "Sulh"]
+  },
+  {
+    "title": "Vakıf Yönetiminde Olağanüstü Genel Kurul",
+    "year": 2022,
+    "area": "Vakıf Hukuku",
+    "summary": "Münhal vakıfta kayyım atanması ve malvarlığı yönetiminin yeniden düzenlenmesi süreçleri tamamlandı.",
+    "result": "Mahkeme kararıyla vakfın faaliyetleri yeniden başlatıldı, yeni yönetim yapılanması onaylandı.",
+    "tags": ["Vakıf", "Kayyım", "Kurumsal Yönetim"]
+  }
+]
