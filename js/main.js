@@ -10,16 +10,9 @@ const modalClose = modal ? modal.querySelector('[data-modal-close]') : null;
 const modalTriggers = document.querySelectorAll('[data-open-modal]');
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
-const heroSlides = document.querySelectorAll('.hero__slide');
-const prefersReducedMotion = typeof window.matchMedia === 'function'
-  ? window.matchMedia('(prefers-reduced-motion: reduce)')
-  : { matches: false };
-
 let lastFocusedElement = null;
 let navOpen = false;
 let modalOpen = false;
-let heroSlideIndex = 0;
-let heroSlideTimer = null;
 
 const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
@@ -83,29 +76,6 @@ function handleScroll() {
     } else {
       scrollTopBtn.classList.remove('is-visible');
     }
-  }
-}
-
-function activateHeroSlide(index) {
-  if (!heroSlides.length) return;
-  heroSlides.forEach((slide, slideIndex) => {
-    slide.classList.toggle('is-active', slideIndex === index);
-  });
-}
-
-function startHeroSlider() {
-  if (!heroSlides.length || prefersReducedMotion.matches) return;
-  activateHeroSlide(heroSlideIndex);
-  heroSlideTimer = setInterval(() => {
-    heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
-    activateHeroSlide(heroSlideIndex);
-  }, 7000);
-}
-
-function stopHeroSlider() {
-  if (heroSlideTimer) {
-    clearInterval(heroSlideTimer);
-    heroSlideTimer = null;
   }
 }
 
@@ -203,39 +173,6 @@ document.addEventListener('keydown', (event) => {
     }
   }
 });
-
-if (heroSlides.length) {
-  if (prefersReducedMotion.matches) {
-    activateHeroSlide(heroSlideIndex);
-  } else {
-    startHeroSlider();
-  }
-
-  const handleMotionPreference = (event) => {
-    if (event.matches) {
-      stopHeroSlider();
-      activateHeroSlide(heroSlideIndex);
-    } else {
-      stopHeroSlider();
-      startHeroSlider();
-    }
-  };
-
-  if (typeof prefersReducedMotion.addEventListener === 'function') {
-    prefersReducedMotion.addEventListener('change', handleMotionPreference);
-  } else if (typeof prefersReducedMotion.addListener === 'function') {
-    prefersReducedMotion.addListener(handleMotionPreference);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      stopHeroSlider();
-    } else if (!prefersReducedMotion.matches) {
-      stopHeroSlider();
-      startHeroSlider();
-    }
-  });
-}
 
 window.addEventListener('resize', () => {
   if (window.innerWidth > 960) {

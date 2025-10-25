@@ -1,41 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Mekanik daktilo amblemi</title>
+  <desc id="desc">Yeşil gövdeli nostaljik bir masaüstü daktiloyu gösteren rozet.</desc>
   <defs>
-    <radialGradient id="badge-bg" cx="45%" cy="35%" r="70%">
-      <stop offset="0" stop-color="#faf5e8" />
-      <stop offset="1" stop-color="#e4d7bb" />
+    <radialGradient id="badgeBackground" cx="46%" cy="38%" r="74%">
+      <stop offset="0" stop-color="#fdf7eb" />
+      <stop offset="1" stop-color="#e8d9bd" />
     </radialGradient>
-    <linearGradient id="badge-shadow" x1="34" y1="118" x2="112" y2="42" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#245445" />
-      <stop offset="1" stop-color="#142d26" />
+    <linearGradient id="deskShadow" x1="38" y1="128" x2="128" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c4136" />
+      <stop offset="1" stop-color="#0c211c" />
     </linearGradient>
-    <linearGradient id="paper" x1="50" y1="26" x2="90" y2="70" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fefcf7" />
-      <stop offset="1" stop-color="#efe9d8" />
+    <linearGradient id="typewriterBody" x1="40" y1="132" x2="120" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f5948" />
+      <stop offset="1" stop-color="#4c7a62" />
     </linearGradient>
-    <linearGradient id="keys" x1="36" y1="104" x2="104" y2="76" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#14352d" />
-      <stop offset="1" stop-color="#0d1f1a" />
+    <linearGradient id="typewriterTop" x1="52" y1="62" x2="108" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4a7b60" />
+      <stop offset="1" stop-color="#81a98e" />
+    </linearGradient>
+    <linearGradient id="paperSheet" x1="72" y1="20" x2="92" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#ede6d7" />
+    </linearGradient>
+    <linearGradient id="keyBed" x1="54" y1="118" x2="106" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#132d24" />
+      <stop offset="1" stop-color="#0b1b17" />
+    </linearGradient>
+    <linearGradient id="metalBar" x1="38" y1="64" x2="122" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6d9c2" />
+      <stop offset="1" stop-color="#cdbfa7" />
     </linearGradient>
   </defs>
-  <path d="M70 10c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60S103.1 10 70 10Z" fill="url(#badge-bg)" stroke="#cfc19f" stroke-width="2.8" />
-  <path d="M40 98.5c0-6.4 5.2-11.6 11.6-11.6h36.8c6.4 0 11.6 5.2 11.6 11.6v7.6c0 4.4-3.6 8-8 8H48c-4.4 0-8-3.6-8-8v-7.6Z" fill="url(#badge-shadow)" stroke="#0f1d1a" stroke-width="2.8" />
-  <rect x="42" y="62" width="56" height="30" rx="7" fill="#f7f1e4" stroke="#b6aa90" stroke-width="2.4" />
-  <rect x="46" y="28" width="48" height="32" rx="5" fill="url(#paper)" stroke="#c8bda3" stroke-width="2.4" />
-  <path d="M46 60h48" stroke="#b3a789" stroke-width="3" stroke-linecap="round" />
-  <path d="M50 36h40" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
-  <path d="M50 44h34" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
-  <path d="M50 52h30" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
-  <path d="M38 74h64" stroke="#0f1d1a" stroke-width="4.2" stroke-linecap="round" />
-  <rect x="48" y="92" width="44" height="10" rx="4" fill="url(#keys)" />
-  <g fill="#f5f0e0">
-    <circle cx="56" cy="97" r="3.4" />
-    <circle cx="66" cy="97" r="3.4" />
-    <circle cx="76" cy="97" r="3.4" />
-    <circle cx="86" cy="97" r="3.4" />
+  <circle cx="80" cy="80" r="70" fill="url(#badgeBackground)" stroke="#cbbb9c" stroke-width="3" />
+  <path fill="url(#deskShadow)" stroke="#0c1e19" stroke-width="3" stroke-linejoin="round"
+    d="M46 114c0-8.5 6.9-15.4 15.4-15.4h37.2C107.1 98.6 114 105.5 114 114v11.6c0 5.8-4.7 10.4-10.4 10.4H56.4C50.7 136 46 131.3 46 125.6V114Z" />
+  <rect x="48" y="70" width="64" height="34" rx="8" fill="url(#typewriterBody)" stroke="#143429" stroke-width="3" />
+  <path d="M52 64h56c6.6 0 12 5.4 12 12v6H40v-6c0-6.6 5.4-12 12-12Z" fill="url(#typewriterTop)" stroke="#1f4638" stroke-width="3" />
+  <rect x="58" y="24" width="44" height="46" rx="6" fill="url(#paperSheet)" stroke="#d4c4aa" stroke-width="3" />
+  <path d="M58 52h44" stroke="#c1b39b" stroke-width="4" stroke-linecap="round" />
+  <path d="M58 40h44" stroke="#c1b39b" stroke-width="3.8" stroke-linecap="round" />
+  <path d="M62 32h36" stroke="#cfc1a5" stroke-width="3" stroke-linecap="round" />
+  <path d="M44 76h72" fill="none" stroke="url(#metalBar)" stroke-width="5" stroke-linecap="round" />
+  <rect x="56" y="102" width="48" height="16" rx="6" fill="url(#keyBed)" />
+  <g fill="#f3ede0">
+    <circle cx="62" cy="110" r="4" />
+    <circle cx="72" cy="110" r="4" />
+    <circle cx="82" cy="110" r="4" />
+    <circle cx="92" cy="110" r="4" />
+    <circle cx="102" cy="110" r="4" />
   </g>
-  <path d="M36 84c-2.3 0-4.2 1.9-4.2 4.2v8.2c0 2.3 1.9 4.2 4.2 4.2h4.2V84H36Z" fill="#e1d6bd" stroke="#b2a587" stroke-width="2.2" />
-  <path d="M104 84h-4.2v16.6H104c2.3 0 4.2-1.9 4.2-4.2v-8.2c0-2.3-1.9-4.2-4.2-4.2Z" fill="#e1d6bd" stroke="#b2a587" stroke-width="2.2" />
-  <path d="M46 24h48" stroke="#0f1d1a" stroke-width="5" stroke-linecap="round" />
-  <circle cx="46" cy="24" r="4" fill="#0f1d1a" />
-  <circle cx="94" cy="24" r="4" fill="#0f1d1a" />
+  <path d="M52 90h56c3.3 0 6 2.7 6 6v4c0 3.3-2.7 6-6 6H52c-3.3 0-6-2.7-6-6v-4c0-3.3 2.7-6 6-6Z" fill="rgba(13,31,26,0.55)" />
+  <path d="M52 26h56" stroke="#0f211c" stroke-width="5" stroke-linecap="round" />
+  <circle cx="52" cy="26" r="4" fill="#0f211c" />
+  <circle cx="108" cy="26" r="4" fill="#0f211c" />
+  <path d="M46 134h68" stroke="rgba(12,31,27,0.35)" stroke-width="4" stroke-linecap="round" />
 </svg>
