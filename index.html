@@ -39,7 +39,7 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
                 <source srcset="/images/avukat_foto.webp" type="image/webp">
                 <img src="/images/avukat_foto.png" alt="Avukat Abdullah Güray Akyol" loading="lazy">
             </picture>
-            <a href="/davalar/" class="btn btn--ghost about__case-link">Emsal Kararları İnceleyin</a>
+            <a href="/davalar/" class="btn btn--ghost about__case-link">Örnek Davaları İnceleyin</a>
         </figure>
         <div class="about__content">
             <span class="section-eyebrow">Kurucu Avukat</span>
@@ -89,15 +89,15 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
         <div class="process-grid">
             <article class="process-card">
                 <h3>1. Analiz &amp; Yol Haritası</h3>
-                <p>Sözleşmeler, yazışmalar ve deliller 48 saat içinde analiz edilir; olası senaryolar ve başarı yüzdeleri raporlanır.</p>
+                <p>Sözleşmeler, yazışmalar ve deliller 48 saat içinde analiz edilir; olası senaryolar ve öncelikli aksiyon planı paylaşılır.</p>
             </article>
             <article class="process-card">
                 <h3>2. Stratejik Uygulama</h3>
                 <p>Tahkim, dava veya arabuluculuk seçenekleri karşılaştırılır; en uygun yol için takvim ve bütçe paylaşılır.</p>
             </article>
             <article class="process-card">
-                <h3>3. Sürekli Raporlama</h3>
-                <p>Duruşma notları, bilirkişi süreçleri ve kritik tarihler dijital pano üzerinden anlık olarak aktarılır.</p>
+                <h3>3. Sürekli Güncelleme</h3>
+                <p>Duruşma notları, bilirkişi süreçleri ve kritik tarihler düzenli olarak teyit edilir; gerekli hamleler aynı gün içinde netleştirilir.</p>
             </article>
         </div>
     </div>
@@ -112,7 +112,7 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
             <ul class="check-list">
                 <li>Uyum denetimleri ve politika dokümantasyonu</li>
                 <li>Sözleşme yaşam döngüsü ve müzakere desteği</li>
-                <li>Sektöre özel rapor ve dokümantasyon hazırlanması</li>
+                <li>Sektöre özel çözüm planları ve doküman desteği</li>
             </ul>
         </div>
         <div class="split-card">
@@ -162,7 +162,9 @@ metaDescription: "Kadıköy avukatı Akyol Hukuk Bürosu. Ticaret, Nakliye, Mede
         <div class="contact__cards">
             {% for channel in contact.channels %}
             <article class="contact-card">
-                <div class="contact-card__icon" aria-hidden="true"><i class="fas fa-{{ channel.icon }}"></i></div>
+                <div class="contact-card__icon" aria-hidden="true">
+                    <img src="/images/icons/contact-{{ channel.icon }}.svg" alt="" loading="lazy">
+                </div>
                 <h3>{{ channel.label }}</h3>
                 {% if channel.url %}
                 <p><a href="{{ channel.url }}">{{ channel.value }}</a></p>
