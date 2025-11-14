@@ -18,6 +18,13 @@
     --font-serif: "Playfair Display", "Times New Roman", serif;
     --font-sans: "Source Sans 3", "Lato", "Helvetica Neue", Arial, sans-serif;
     --transition-base: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    --header-height: 88px;
+}
+
+@media (max-width: 640px) {
+    :root {
+        --header-height: 72px;
+    }
 }
 
 * {
@@ -84,6 +91,10 @@ p {
 ul {
     margin: 0 0 1.5rem;
     padding: 0 0 0 1.25rem;
+}
+
+section[id] {
+    scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 .section {
@@ -523,6 +534,7 @@ ul {
     background-repeat: no-repeat;
     background-position: 110% -20%;
     opacity: 0.25;
+    pointer-events: none;
 }
 
 .about__portrait::after {
@@ -982,6 +994,9 @@ ul {
 .site-footer__nav {
     display: grid;
     gap: 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .site-footer__nav a {
@@ -1005,8 +1020,8 @@ ul {
 .site-footer__lower {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    padding-top: 1.5rem;
+    gap: 1.25rem;
+    padding-top: 1.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.75);
@@ -1018,7 +1033,31 @@ ul {
 }
 
 .site-footer__meta {
+    display: grid;
+    gap: 0.6rem;
     line-height: 1.6;
+}
+
+.site-footer__address {
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.site-footer__contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+}
+
+.site-footer__contact-links a {
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 600;
+}
+
+.site-footer__contact-links a:hover,
+.site-footer__contact-links a:focus-visible {
+    color: #fff;
 }
 
 .site-footer__legal {
@@ -1029,8 +1068,39 @@ ul {
     .site-footer__lower {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .site-footer__meta {
+        grid-template-columns: repeat(2, minmax(0, auto));
         align-items: center;
         text-align: left;
+    }
+
+    .site-footer__contact-links {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 960px) {
+    .site-footer__upper {
+        grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.4fr);
+        align-items: flex-start;
+    }
+
+    .site-footer__columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2.5rem;
+    }
+
+    .site-footer__meta {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.75rem 2.5rem;
+    }
+
+    .site-footer__contact-links {
+        justify-content: flex-start;
     }
 }
 

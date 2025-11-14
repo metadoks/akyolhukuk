@@ -133,7 +133,16 @@
                 </div>
             </div>
             <div class="site-footer__lower">
-                <p class="site-footer__meta">{{ site.address.street }}, {{ site.address.region }} / {{ site.address.city }} • Tel: <a href="tel:{{ site.phone }}">{{ site.phone }}</a> • <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                <div class="site-footer__meta">
+                    <address class="site-footer__address">
+                        {{ site.address.street }}<br>
+                        {{ site.address.district }}, {{ site.address.region }} / {{ site.address.city }} {{ site.address.postalCode }}
+                    </address>
+                    <div class="site-footer__contact-links">
+                        <a href="tel:{{ site.phone }}">Telefon: {{ site.phone }}</a>
+                        <a href="mailto:{{ site.email }}">E-posta: {{ site.email }}</a>
+                    </div>
+                </div>
                 <p class="site-footer__legal">&copy; {{ global.currentYear }} {{ site.name }}. Tüm hakları saklıdır.</p>
             </div>
         </div>
