@@ -402,6 +402,24 @@ section[id] {
     pointer-events: none;
 }
 
+@media (max-width: 640px) {
+    .hero {
+        min-height: clamp(460px, 90vh, 600px);
+        align-items: flex-start;
+        padding-top: calc(var(--header-height) + 0.75rem);
+    }
+
+    .hero__content {
+        gap: 0.85rem;
+    }
+
+    .hero__actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .hero::after {
         display: none;
@@ -1123,12 +1141,22 @@ section[id] {
     transition: transform var(--transition-base), opacity var(--transition-base);
     box-shadow: 0 16px 38px -25px rgba(15, 29, 26, 0.8);
     z-index: 60;
+    touch-action: manipulation;
 }
 
 .scroll-top-btn.is-visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    .scroll-top-btn {
+        right: clamp(1rem, 4vw, 1.5rem);
+        bottom: clamp(1rem, 5vw, 1.75rem);
+        width: 3.25rem;
+        height: 3.25rem;
+    }
 }
 
 .modal[hidden] {

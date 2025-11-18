@@ -4,6 +4,8 @@ const nav = document.querySelector('[data-nav]');
 const navToggle = document.querySelector('[data-nav-toggle]');
 const navLinks = nav ? nav.querySelectorAll('[data-nav-link]') : [];
 const scrollTopBtn = document.querySelector('[data-scroll-top]');
+const smallScreenQuery = window.matchMedia('(max-width: 640px)');
+let scrollThreshold = smallScreenQuery.matches ? 220 : 360;
 const modal = document.querySelector('[data-modal]');
 const modalOverlay = modal ? modal.querySelector('[data-modal-overlay]') : null;
 const modalClose = modal ? modal.querySelector('[data-modal-close]') : null;
@@ -71,7 +73,7 @@ function handleScroll() {
     header.classList.toggle('is-scrolled', scrollY > 16);
   }
   if (scrollTopBtn) {
-    if (scrollY > 360) {
+    if (scrollY > scrollThreshold) {
       scrollTopBtn.classList.add('is-visible');
     } else {
       scrollTopBtn.classList.remove('is-visible');
@@ -178,4 +180,9 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 960) {
     setNavState(false);
   }
+});
+
+smallScreenQuery.addEventListener('change', (event) => {
+  scrollThreshold = event.matches ? 220 : 360;
+  handleScroll();
 });
