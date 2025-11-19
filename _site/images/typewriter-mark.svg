@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+  <defs>
+    <radialGradient id="badge-bg" cx="45%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#faf5e8" />
+      <stop offset="1" stop-color="#e4d7bb" />
+    </radialGradient>
+    <linearGradient id="badge-shadow" x1="34" y1="118" x2="112" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#245445" />
+      <stop offset="1" stop-color="#142d26" />
+    </linearGradient>
+    <linearGradient id="paper" x1="50" y1="26" x2="90" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fefcf7" />
+      <stop offset="1" stop-color="#efe9d8" />
+    </linearGradient>
+    <linearGradient id="keys" x1="36" y1="104" x2="104" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14352d" />
+      <stop offset="1" stop-color="#0d1f1a" />
+    </linearGradient>
+  </defs>
+  <path d="M70 10c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60S103.1 10 70 10Z" fill="url(#badge-bg)" stroke="#cfc19f" stroke-width="2.8" />
+  <path d="M40 98.5c0-6.4 5.2-11.6 11.6-11.6h36.8c6.4 0 11.6 5.2 11.6 11.6v7.6c0 4.4-3.6 8-8 8H48c-4.4 0-8-3.6-8-8v-7.6Z" fill="url(#badge-shadow)" stroke="#0f1d1a" stroke-width="2.8" />
+  <rect x="42" y="62" width="56" height="30" rx="7" fill="#f7f1e4" stroke="#b6aa90" stroke-width="2.4" />
+  <rect x="46" y="28" width="48" height="32" rx="5" fill="url(#paper)" stroke="#c8bda3" stroke-width="2.4" />
+  <path d="M46 60h48" stroke="#b3a789" stroke-width="3" stroke-linecap="round" />
+  <path d="M50 36h40" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
+  <path d="M50 44h34" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
+  <path d="M50 52h30" stroke="#aba086" stroke-width="3" stroke-linecap="round" />
+  <path d="M38 74h64" stroke="#0f1d1a" stroke-width="4.2" stroke-linecap="round" />
+  <rect x="48" y="92" width="44" height="10" rx="4" fill="url(#keys)" />
+  <g fill="#f5f0e0">
+    <circle cx="56" cy="97" r="3.4" />
+    <circle cx="66" cy="97" r="3.4" />
+    <circle cx="76" cy="97" r="3.4" />
+    <circle cx="86" cy="97" r="3.4" />
+  </g>
+  <path d="M36 84c-2.3 0-4.2 1.9-4.2 4.2v8.2c0 2.3 1.9 4.2 4.2 4.2h4.2V84H36Z" fill="#e1d6bd" stroke="#b2a587" stroke-width="2.2" />
+  <path d="M104 84h-4.2v16.6H104c2.3 0 4.2-1.9 4.2-4.2v-8.2c0-2.3-1.9-4.2-4.2-4.2Z" fill="#e1d6bd" stroke="#b2a587" stroke-width="2.2" />
+  <path d="M46 24h48" stroke="#0f1d1a" stroke-width="5" stroke-linecap="round" />
+  <circle cx="46" cy="24" r="4" fill="#0f1d1a" />
+  <circle cx="94" cy="24" r="4" fill="#0f1d1a" />
+</svg>
