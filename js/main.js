@@ -5,7 +5,7 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const navLinks = nav ? nav.querySelectorAll('[data-nav-link]') : [];
 const scrollTopBtn = document.querySelector('[data-scroll-top]');
 const smallScreenQuery = window.matchMedia('(max-width: 640px)');
-let scrollThreshold = smallScreenQuery.matches ? 160 : 280;
+let scrollThreshold = smallScreenQuery.matches ? 120 : 220;
 const modal = document.querySelector('[data-modal]');
 const modalOverlay = modal ? modal.querySelector('[data-modal-overlay]') : null;
 const modalClose = modal ? modal.querySelector('[data-modal-close]') : null;
@@ -23,6 +23,7 @@ function setNavState(open) {
   navOpen = open;
   nav.setAttribute('data-open', String(open));
   navToggle.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('is-nav-open', open);
   if (open) {
     body.style.overflow = 'hidden';
     navToggle.classList.add('is-active');
@@ -183,6 +184,6 @@ window.addEventListener('resize', () => {
 });
 
 smallScreenQuery.addEventListener('change', (event) => {
-  scrollThreshold = event.matches ? 160 : 280;
+  scrollThreshold = event.matches ? 120 : 220;
   handleScroll();
 });

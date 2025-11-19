@@ -275,7 +275,7 @@ section[id] {
     cursor: pointer;
     transition: background var(--transition-base);
     position: relative;
-    z-index: 95;
+    z-index: 130;
 }
 
 .site-header__toggle span[aria-hidden="true"] {
@@ -1146,6 +1146,11 @@ section[id] {
     touch-action: manipulation;
 }
 
+.scroll-top-btn svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
 .scroll-top-btn.is-visible {
     opacity: 1;
     visibility: visible;
@@ -1370,6 +1375,10 @@ section[id] {
         width: min(92%, 680px);
     }
 
+    .site-header {
+        z-index: 120;
+    }
+
     .site-nav {
         position: fixed;
         inset: 0;
@@ -1382,8 +1391,14 @@ section[id] {
         pointer-events: none;
         transition: transform var(--transition-base), opacity var(--transition-base);
         padding-inline: 2rem;
-        z-index: 90;
+        z-index: 110;
         overflow-y: auto;
+    }
+
+    body.is-nav-open .site-nav {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .site-nav[data-open="true"] {
