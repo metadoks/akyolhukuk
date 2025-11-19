@@ -274,6 +274,8 @@ section[id] {
     border-radius: 999px;
     cursor: pointer;
     transition: background var(--transition-base);
+    position: relative;
+    z-index: 95;
 }
 
 .site-header__toggle span[aria-hidden="true"] {
@@ -1380,6 +1382,8 @@ section[id] {
         pointer-events: none;
         transition: transform var(--transition-base), opacity var(--transition-base);
         padding-inline: 2rem;
+        z-index: 90;
+        overflow-y: auto;
     }
 
     .site-nav[data-open="true"] {
